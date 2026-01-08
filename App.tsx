@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Page } from './types';
 import Header from './components/Header';
@@ -17,16 +18,13 @@ const App: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Re-initialize Lucide icons if any
     if ((window as any).lucide) (window as any).lucide.createIcons();
   }, [currentPage]);
 
   const handleRequestDetails = () => {
-    // Primary CTA is now WhatsApp
     window.open("https://wa.me/917017714385?text=Hello, I would like to request details for a plot in Dehradun.", "_blank");
   };
 
-  // Only show 6 featured plots as requested
   const featuredPlots = PLOTS.slice(0, 6);
 
   return (
@@ -54,18 +52,18 @@ const App: React.FC = () => {
                   {featuredPlots.map((plot) => (
                     <div 
                       key={plot.id} 
-                      className="bg-[#142626] rounded-[10px] overflow-hidden flex flex-col group border border-white/5 transition-all duration-500 hover:-translate-y-3 hover:border-[#0097b2] hover:shadow-[0_30px_60px_-12px_rgba(0,0,0,0.7),0_0_25px_rgba(0,151,178,0.15)]"
+                      className="bg-[#142626] rounded-[12px] overflow-hidden flex flex-col group border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-[#0097b2]/40 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),0_0_30px_rgba(0,151,178,0.1)]"
                     >
                       <div className="relative h-60 overflow-hidden">
                         <img 
                           src={plot.image} 
                           alt={plot.title} 
-                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                          className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
                         />
                         <div className="absolute top-4 left-4 bg-[#0097b2] text-white px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider z-10 shadow-lg">
                           {plot.type}
                         </div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A1A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A1A]/70 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500"></div>
                       </div>
                       
                       <div className="p-7 flex flex-col flex-grow">
@@ -119,11 +117,10 @@ const App: React.FC = () => {
               </div>
             </section>
 
-            {/* Handpicked Himalayan Sanctuary Section with Background */}
             <section className="relative py-24 overflow-hidden">
               <div 
                 className="absolute inset-0 z-0 bg-cover bg-center"
-                style={{ backgroundImage: 'url("https://srv1128-files.hstgr.io/ed133b4ee9958d85/files/public_html/assets/images/hhp.jpeg")' }}
+                style={{ backgroundImage: 'url("https://otcgrtgpkrksjlmjjcrl.supabase.co/storage/v1/object/sign/Iamges/hhw.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82OTk2ZThjYS02MDA5LTRkNWUtYmJmYi1lYjFlNzA2NTUyZjkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJYW1nZXMvaGhwLmpwZWciLCJpYXQiOjE3Njc5MDA3NzMsImV4cCI6MjA4MzI2MDc3M30.DwhV3WZhCjnaZWsHOtyYXmhzqqJhrcPhr7E7AxhCAVk")' }}
               >
                 <div className="absolute inset-0 bg-[#0E1A1A]/90 backdrop-blur-[2px]"></div>
               </div>

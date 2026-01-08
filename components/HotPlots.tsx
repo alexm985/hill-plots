@@ -12,28 +12,21 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
 
   const filteredPlots = useMemo(() => {
     return PLOTS.filter(plot => {
-      // Type filtering
       const matchesType = typeFilter === 'All' || plot.type === typeFilter;
       
-      // Price filtering logic (simplified based on string markers in our data)
       let matchesPrice = true;
       if (priceFilter !== 'All') {
         const priceStr = plot.price.toLowerCase();
         const isLakhs = priceStr.includes('l');
         const isCrores = priceStr.includes('cr');
         const isSqy = priceStr.includes('/ sqy');
-        
-        // Extract numeric value for SQY or total price
         const numericValue = parseInt(priceStr.replace(/[^0-9]/g, '')) || 0;
 
         if (priceFilter === 'Budget') {
-          // Budget: Less than 12,000/SQY or less than 50L
           matchesPrice = (isSqy && numericValue < 12000) || (isLakhs && numericValue < 50) && !isCrores;
         } else if (priceFilter === 'Premium') {
-          // Premium: 12,000 - 20,000/SQY or 50L - 90L
           matchesPrice = (isSqy && numericValue >= 12000 && numericValue <= 20000) || (isLakhs && numericValue >= 50 && numericValue <= 90);
         } else if (priceFilter === 'Luxury') {
-          // Luxury: Above 20,000/SQY or Above 1Cr
           matchesPrice = (isSqy && numericValue > 20000) || isCrores || (isLakhs && numericValue > 90);
         }
       }
@@ -52,7 +45,6 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
                 <div className="w-16 h-[3px] bg-[#C9A24D]"></div>
             </div>
 
-            {/* Filters UI */}
             <div className="flex flex-wrap gap-4">
                 <div className="flex flex-col gap-2">
                     <label className="text-[10px] uppercase tracking-widest text-[#A7B7B3] font-bold">Category</label>
@@ -99,18 +91,18 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
             {filteredPlots.map((plot) => (
                 <div 
                 key={plot.id} 
-                className="bg-[#142626] rounded-[10px] overflow-hidden flex flex-col group border border-white/5 transition-all duration-500 hover:-translate-y-3 hover:border-[#0097b2] hover:shadow-[0_30px_60px_-12px_rgba(0,0,0,0.7),0_0_25px_rgba(0,151,178,0.15)]"
+                className="bg-[#142626] rounded-[12px] overflow-hidden flex flex-col group border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-[#0097b2]/40 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),0_0_30px_rgba(0,151,178,0.1)]"
                 >
                 <div className="relative h-60 overflow-hidden">
                     <img 
                     src={plot.image} 
                     alt={plot.title} 
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                    className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4 bg-[#0097b2] text-white px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider z-10 shadow-lg">
                     {plot.type === 'Agriculture' ? 'Agricultural' : plot.type}
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A1A]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A1A]/70 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500"></div>
                 </div>
                 
                 <div className="p-7 flex flex-col flex-grow relative">
