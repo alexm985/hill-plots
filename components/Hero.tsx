@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { Page } from '../types';
 
@@ -7,7 +8,7 @@ interface HeroProps {
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=2000",
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg",
     subtitle: "Himalayan Excellence",
     title: "Premium Himalayan Estates, Dehradun",
     description: "Exclusive residential and investment plots in the Bhauwala belt. Zero brokerage. Ownership transparency. Direct from shareholders.",
@@ -19,7 +20,7 @@ const slides = [
     description: "Nestled between the lush Sal forests and the rising foothills, offering the perfect balance of serenity and urban connectivity.",
   },
   {
-    image: "https://srv1128-files.hstgr.io/ed133b4ee9958d85/files/public_html/assets/images/hhp.jpeg",
+    image: "https://hill.digweblance.com/assets/image/slider1.jpg",
     subtitle: "Secure Investments",
     title: "Direct Shareholder, Ownership",
     description: "Transparent legal documentation and direct dealings. No middlemen. Secure your future in Dehradun's fastest-growing corridor.",

@@ -35,110 +35,196 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
     });
   }, [typeFilter, priceFilter]);
 
-  return (
-    <div className="pt-32 pb-24 bg-[#142626] min-h-screen">
-      <div className="max-w-[1300px] mx-auto px-6 sm:px-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-            <div>
-                <span className="text-[#C9A24D] font-bold text-[13px] uppercase tracking-[2px] block mb-2">Premium Inventory</span>
-                <h2 className="text-4xl md:text-5xl font-normal heading-serif mb-4 text-[#F5F7F6]">Active Plot Listings</h2>
-                <div className="w-16 h-[3px] bg-[#C9A24D]"></div>
-            </div>
+  const activeFiltersCount = (typeFilter !== 'All' ? 1 : 0) + (priceFilter !== 'All' ? 1 : 0);
 
-            <div className="flex flex-wrap gap-4">
-                <div className="flex flex-col gap-2">
-                    <label className="text-[10px] uppercase tracking-widest text-[#A7B7B3] font-bold">Category</label>
-                    <div className="flex bg-[#0E1A1A] p-1 rounded-lg border border-white/5">
-                        {['All', 'Residential', 'Agriculture'].map((type) => (
-                            <button
-                                key={type}
-                                onClick={() => setTypeFilter(type as any)}
-                                className={`px-4 py-2 text-[10px] font-bold uppercase tracking-wider rounded-md transition-all ${
-                                    typeFilter === type 
-                                    ? 'bg-[#0097b2] text-white shadow-lg' 
-                                    : 'text-[#A7B7B3] hover:text-white'
-                                }`}
-                            >
-                                {type === 'Agriculture' ? 'Agricultural' : type}
-                            </button>
-                        ))}
+  return (
+    <div className="pt-32 pb-24 bg-[#0E1A1A] min-h-screen">
+      <div className="max-w-[1300px] mx-auto px-6 sm:px-10">
+        
+        {/* Advanced Header & Filter Section */}
+        <div className="mb-16">
+            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+                <div className="max-w-xl">
+                    <span className="text-[#C9A24D] font-bold text-[11px] uppercase tracking-[4px] block mb-3">Inventory Explorer</span>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal heading-serif text-[#F5F7F6] leading-tight mb-6">
+                        Find Your <span className="text-[#0097b2] italic">Sanctuary</span>
+                    </h2>
+                    <div className="flex items-center gap-4 text-[#A7B7B3] font-serif italic text-lg">
+                        <span className="w-12 h-[1px] bg-white/10"></span>
+                        <p>Showing <span className="text-white font-sans not-italic font-bold">{filteredPlots.length}</span> curated plots in Dehradun</p>
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-2">
-                    <label className="text-[10px] uppercase tracking-widest text-[#A7B7B3] font-bold">Investment Range</label>
-                    <div className="flex bg-[#0E1A1A] p-1 rounded-lg border border-white/5">
-                        {['All', 'Budget', 'Premium', 'Luxury'].map((range) => (
-                            <button
-                                key={range}
-                                onClick={() => setPriceFilter(range as any)}
-                                className={`px-4 py-2 text-[10px] font-bold uppercase tracking-wider rounded-md transition-all ${
-                                    priceFilter === range 
-                                    ? 'bg-[#C9A24D] text-[#0E1A1A] shadow-lg' 
-                                    : 'text-[#A7B7B3] hover:text-white'
-                                }`}
+                {/* Desktop Filter Bar - Advanced UI */}
+                <div className="hidden lg:flex items-center bg-[#142626] border border-white/5 rounded-2xl p-2 shadow-2xl backdrop-blur-xl">
+                    <div className="px-6 py-2 border-r border-white/5">
+                        <label className="block text-[9px] uppercase tracking-widest text-[#C9A24D] font-black mb-2">Category</label>
+                        <div className="flex gap-2">
+                            {[
+                                { id: 'All', icon: 'fa-th-large' },
+                                { id: 'Residential', icon: 'fa-house-user' },
+                                { id: 'Agriculture', icon: 'fa-leaf' }
+                            ].map((type) => (
+                                <button
+                                    key={type.id}
+                                    onClick={() => setTypeFilter(type.id as any)}
+                                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all duration-300 ${
+                                        typeFilter === type.id 
+                                        ? 'bg-[#0097b2] text-white shadow-lg' 
+                                        : 'text-[#A7B7B3] hover:bg-white/5 hover:text-white'
+                                    }`}
+                                >
+                                    <i className={`fas ${type.icon} text-[12px]`}></i>
+                                    {type.id === 'Agriculture' ? 'Agricultural' : type.id}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                    
+                    <div className="px-6 py-2 border-r border-white/5">
+                        <label className="block text-[9px] uppercase tracking-widest text-[#C9A24D] font-black mb-2">Investment Range</label>
+                        <div className="flex gap-2">
+                            {['All', 'Budget', 'Premium', 'Luxury'].map((range) => (
+                                <button
+                                    key={range}
+                                    onClick={() => setPriceFilter(range as any)}
+                                    className={`px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all duration-300 ${
+                                        priceFilter === range 
+                                        ? 'bg-[#C9A24D] text-[#0E1A1A] shadow-lg' 
+                                        : 'text-[#A7B7B3] hover:bg-white/5 hover:text-white'
+                                    }`}
+                                >
+                                    {range}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {activeFiltersCount > 0 && (
+                        <button 
+                            onClick={() => { setTypeFilter('All'); setPriceFilter('All'); }}
+                            className="ml-4 mr-4 p-3 text-[#A7B7B3] hover:text-[#0097b2] transition-colors"
+                            title="Reset Filters"
+                        >
+                            <i className="fas fa-undo-alt text-sm"></i>
+                        </button>
+                    )}
+                </div>
+
+                {/* Mobile Filter Toggle Style (Responsive) */}
+                <div className="lg:hidden flex flex-col gap-6">
+                    <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-3">
+                            <label className="text-[10px] uppercase tracking-widest text-[#C9A24D] font-bold pl-1">Property Type</label>
+                            <select 
+                                value={typeFilter}
+                                onChange={(e) => setTypeFilter(e.target.value as any)}
+                                className="w-full bg-[#142626] border border-white/10 text-white p-4 rounded-xl text-sm font-bold appearance-none outline-none focus:border-[#0097b2]"
                             >
-                                {range}
-                            </button>
-                        ))}
+                                <option value="All">All Categories</option>
+                                <option value="Residential">Residential</option>
+                                <option value="Agriculture">Agricultural</option>
+                            </select>
+                        </div>
+                        <div className="space-y-3">
+                            <label className="text-[10px] uppercase tracking-widest text-[#C9A24D] font-bold pl-1">Investment</label>
+                            <select 
+                                value={priceFilter}
+                                onChange={(e) => setPriceFilter(e.target.value as any)}
+                                className="w-full bg-[#142626] border border-white/10 text-white p-4 rounded-xl text-sm font-bold appearance-none outline-none focus:border-[#C9A24D]"
+                            >
+                                <option value="All">All Ranges</option>
+                                <option value="Budget">Budget</option>
+                                <option value="Premium">Premium</option>
+                                <option value="Luxury">Luxury</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        {/* Listings Grid */}
         {filteredPlots.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {filteredPlots.map((plot) => (
                 <div 
                 key={plot.id} 
-                className="bg-[#142626] rounded-[12px] overflow-hidden flex flex-col group border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-[#0097b2]/40 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),0_0_30px_rgba(0,151,178,0.1)]"
+                className="bg-[#142626] rounded-[20px] overflow-hidden flex flex-col group border border-white/5 transition-all duration-500 hover:-translate-y-3 hover:border-[#0097b2]/40 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8),0_0_40px_rgba(0,151,178,0.1)]"
                 >
-                <div className="relative h-60 overflow-hidden">
+                <div className="relative h-72 overflow-hidden">
                     <img 
                     src={plot.image} 
                     alt={plot.title} 
-                    className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-110"
                     />
-                    <div className="absolute top-4 left-4 bg-[#0097b2] text-white px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider z-10 shadow-lg">
-                    {plot.type === 'Agriculture' ? 'Agricultural' : plot.type}
+                    
+                    {/* Status Badge */}
+                    <div className="absolute top-6 left-6 flex flex-col gap-2 z-10">
+                        <span className="bg-[#0E1A1A]/80 backdrop-blur-md text-white border border-white/10 px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[2px] shadow-2xl">
+                            {plot.type === 'Agriculture' ? 'Agricultural' : plot.type}
+                        </span>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A1A]/70 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500"></div>
+
+                    {/* View Badge */}
+                    <div className="absolute top-6 right-6 z-10">
+                         <div className="bg-[#0097b2] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <i className="fas fa-eye text-[12px]"></i>
+                         </div>
+                    </div>
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A1A] via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-700"></div>
                 </div>
                 
-                <div className="p-7 flex flex-col flex-grow relative">
-                    <span className="text-[#C9A24D] text-[11px] uppercase tracking-[2px] font-bold mb-2">
-                        {plot.code}
-                    </span>
-                    <h3 className="text-xl font-normal heading-serif text-[#F5F7F6] mb-4 h-14 overflow-hidden leading-snug group-hover:text-[#0097b2] transition-colors duration-300">
+                <div className="p-8 flex flex-col flex-grow relative -mt-10 bg-[#142626] rounded-t-[30px] z-20">
+                    <div className="flex justify-between items-center mb-4">
+                        <span className="text-[#C9A24D] text-[10px] uppercase tracking-[3px] font-black py-1 px-3 bg-[#C9A24D]/5 rounded-md">
+                            {plot.code}
+                        </span>
+                        <div className="text-[#0097b2] text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-[#0097b2] animate-pulse"></span>
+                            Available
+                        </div>
+                    </div>
+
+                    <h3 className="text-2xl font-normal heading-serif text-[#F5F7F6] mb-6 h-16 overflow-hidden leading-tight group-hover:text-[#0097b2] transition-colors duration-300">
                         {plot.title}
                     </h3>
                     
-                    <div className="text-[13px] text-[#A7B7B3] mb-6 py-3 border-y border-white/5 flex flex-col gap-2 flex-grow">
-                        <div className="flex justify-between items-center">
-                            <span className="opacity-60 italic">Location:</span>
-                            <b className="font-normal italic text-[#F5F7F6] text-right ml-4">{plot.location}</b>
+                    <div className="grid grid-cols-2 gap-y-4 gap-x-6 mb-8 py-6 border-y border-white/5">
+                        <div className="space-y-1">
+                            <span className="text-[9px] uppercase tracking-widest text-[#A7B7B3] font-bold">Location</span>
+                            <p className="text-xs text-white font-serif italic truncate">{plot.location}</p>
                         </div>
-                        <div className="flex justify-between items-center">
-                            <span className="opacity-60 italic">Size:</span>
-                            <b className="font-normal italic text-[#F5F7F6]">{plot.size}</b>
+                        <div className="space-y-1">
+                            <span className="text-[9px] uppercase tracking-widest text-[#A7B7B3] font-bold">Dimensions</span>
+                            <p className="text-xs text-white font-serif italic">{plot.size}</p>
                         </div>
-                        <div className="flex justify-between items-center">
-                            <span className="opacity-60 italic">Class:</span>
-                            <b className="font-normal italic text-[#F5F7F6]">{plot.propertyClass}</b>
+                        <div className="space-y-1">
+                            <span className="text-[9px] uppercase tracking-widest text-[#A7B7B3] font-bold">Classification</span>
+                            <p className="text-xs text-white font-serif italic">{plot.propertyClass}</p>
+                        </div>
+                        <div className="space-y-1">
+                            <span className="text-[9px] uppercase tracking-widest text-[#A7B7B3] font-bold">Ownership</span>
+                            <p className="text-xs text-white font-serif italic">Verified</p>
                         </div>
                     </div>
                     
-                    <div className="flex items-center justify-between mt-auto pt-2">
-                        <div className="text-lg font-bold text-[#0097b2] tracking-tight">
-                            {plot.price}
+                    <div className="flex items-center justify-between mt-auto">
+                        <div className="flex flex-col">
+                            <span className="text-[9px] uppercase tracking-widest text-[#A7B7B3] font-bold mb-1">Inaugural Price</span>
+                            <div className="text-2xl font-black text-white tracking-tight">
+                                {plot.price}
+                            </div>
                         </div>
                         <a 
                             href={`https://wa.me/917017714385?text=I am interested in ${plot.title} (${plot.code})`}
                             target="_blank"
                             rel="noreferrer"
-                            className="bg-transparent border border-[#0097b2] text-[#0097b2] hover:bg-[#0097b2] hover:text-white px-5 py-2.5 text-[11px] font-bold uppercase tracking-widest transition-all duration-300 transform active:scale-95 rounded-[10px]"
+                            className="bg-[#0097b2] hover:bg-white text-white hover:text-[#0E1A1A] p-4 rounded-2xl transition-all duration-300 transform active:scale-95 flex items-center justify-center"
+                            title="Inquire via WhatsApp"
                         >
-                            Book Visit
+                            <i className="fab fa-whatsapp text-xl"></i>
                         </a>
                     </div>
                 </div>
@@ -146,15 +232,19 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
             ))}
             </div>
         ) : (
-            <div className="text-center py-20 bg-[#0E1A1A] rounded-[20px] border border-dashed border-white/10">
-                <i className="fas fa-search text-4xl text-[#C9A24D] mb-6 opacity-20"></i>
-                <h3 className="text-2xl font-normal heading-serif text-[#F5F7F6] mb-2">No matching plots found</h3>
-                <p className="text-[#A7B7B3] italic font-serif">Try adjusting your filters to see more results.</p>
+            <div className="text-center py-32 bg-[#142626] rounded-[30px] border border-dashed border-white/10">
+                <div className="w-24 h-24 bg-[#0E1A1A] rounded-full flex items-center justify-center mx-auto mb-8 shadow-2xl">
+                    <i className="fas fa-search text-3xl text-[#C9A24D] opacity-40"></i>
+                </div>
+                <h3 className="text-3xl font-normal heading-serif text-[#F5F7F6] mb-4">No matching sanctuaries found</h3>
+                <p className="text-[#A7B7B3] italic font-serif text-lg max-w-md mx-auto leading-relaxed">
+                    Our current portfolio in this range is exhausted. Try expanding your search criteria to discover hidden gems.
+                </p>
                 <button 
                     onClick={() => { setTypeFilter('All'); setPriceFilter('All'); }}
-                    className="mt-8 text-[#0097b2] text-xs font-bold uppercase tracking-[2px] hover:underline"
+                    className="mt-12 bg-transparent border-b border-[#0097b2] text-[#0097b2] py-2 text-xs font-bold uppercase tracking-[4px] hover:text-white hover:border-white transition-all"
                 >
-                    Reset All Filters
+                    Clear All Preferences
                 </button>
             </div>
         )}

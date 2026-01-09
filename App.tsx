@@ -183,7 +183,6 @@ const App: React.FC = () => {
                 <div className="flex justify-center space-x-10 mb-10">
                     <a href="#" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-2xl"><i className="fab fa-facebook-f"></i></a>
                     <a href="#" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-2xl"><i className="fab fa-instagram"></i></a>
-                    <a href="#" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-2xl"><i className="fab fa-linkedin-in"></i></a>
                     <a href="#" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-2xl"><i className="fab fa-youtube"></i></a>
                 </div>
                 
