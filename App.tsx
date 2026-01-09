@@ -117,6 +117,8 @@ const App: React.FC = () => {
               </div>
             </section>
 
+            <Testimonials />
+
             <section className="relative py-24 overflow-hidden">
               <div 
                 className="absolute inset-0 z-0 bg-cover bg-center"
@@ -156,7 +158,6 @@ const App: React.FC = () => {
             <ProcessTerms />
             <AreaCalculator />
             <FAQ />
-            <Testimonials />
           </>
         ) : (
           <>

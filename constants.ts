@@ -216,30 +216,6 @@ export const TESTIMONIALS = [
     role: "Tech Executive",
     text: "Hill Plots made my investment journey seamless. The site visits were well-organized, and the transparency regarding the 143 Awasiya classification was a breath of fresh air compared to typical brokers in the city.",
     rating: 5
-  },
-  {
-    name: "Shalini Iyer",
-    role: "Creative Director",
-    text: "I was looking for a 'sanctuary' rather than just a plot of land. The hill-view site they found for me is breathtaking. It's rare to find developers who appreciate the aesthetic value of the Himalayan landscape as much as they do.",
-    rating: 5
-  },
-  {
-    name: "Meera Das",
-    role: "Retiree",
-    text: "I always wanted a peaceful home in the hills for my retirement. Thanks to their transparent process and the 33% advance structure, I felt secure at every step. I now own a beautiful plot in Bhauwala, exactly as promised.",
-    rating: 5
-  },
-  {
-    name: "Manish Pandey",
-    role: "Govt. Official",
-    text: "Being in the government, I am very particular about legal compliance. Hill Plots exceeded my expectations. They provided the chain of documents upfront and the registration at the Registrar office was handled very professionally.",
-    rating: 5
-  },
-  {
-    name: "Sanjay Gupta",
-    role: "Business Owner",
-    text: "The shareholder model is a game changer. Dealing directly with the owners meant no hidden costs and a much more personal touch. Their knowledge of the upcoming development in the Dehradun corridor is very insightful.",
-    rating: 5
   }
 ];
 
