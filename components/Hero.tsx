@@ -105,19 +105,23 @@ const Hero: React.FC<HeroProps> = ({ setCurrentPage }) => {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in">
-          <button 
-            onClick={() => setCurrentPage('HotPlots')}
-            className="group relative bg-[#0097b2] hover:bg-transparent border border-[#0097b2] text-white hover:text-[#0097b2] px-10 py-5 text-xs font-bold uppercase tracking-[3px] transition-all duration-500 shadow-[0_20px_50px_rgba(0,151,178,0.3)] rounded-[10px]"
+          <a 
+            href="https://hill.digweblance.com/assets/image/Hill%20Plots%20-%20Brochure%20.docx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative bg-[#0097b2] hover:bg-transparent border border-[#0097b2] text-white hover:text-[#0097b2] px-10 py-5 text-xs font-bold uppercase tracking-[3px] transition-all duration-500 shadow-[0_20px_50px_rgba(0,151,178,0.3)] rounded-[10px] inline-block"
           >
-            Browse Catalog
-          </button>
+            Download Brochure
+          </a>
           
-          <button 
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-transparent border border-[#C9A24D] text-[#C9A24D] hover:bg-[#C9A24D] hover:text-[#0E1A1A] px-10 py-5 text-xs font-bold uppercase tracking-[3px] transition-all duration-500 rounded-[10px]"
+          <a 
+            href="tel:+917017714385"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-transparent border border-[#C9A24D] text-[#C9A24D] hover:bg-[#C9A24D] hover:text-[#0E1A1A] px-10 py-5 text-xs font-bold uppercase tracking-[3px] transition-all duration-500 rounded-[10px]"
           >
-            The Ethos
-          </button>
+            Book Site Visit
+          </a>
         </div>
       </div>
       

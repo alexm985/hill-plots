@@ -37,11 +37,11 @@ const AboutUs: React.FC = () => {
             <div className="absolute inset-0 border border-[#0097b2]/20 translate-x-4 translate-y-4 lg:translate-x-8 lg:translate-y-8 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-700 rounded-[10px]"></div>
             <div className="relative z-10 overflow-hidden rounded-[10px] shadow-2xl">
               <img 
-                src="https://otcgrtgpkrksjlmjjcrl.supabase.co/storage/v1/object/sign/Iamges/hhw.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82OTk2ZThjYS02MDA5LTRkNWUtYmJmYi1lYjFlNzA2NTUyZjkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJYW1nZXMvaGhwLmpwZWciLCJpYXQiOjE3Njc5MDA3NzMsImV4cCI6MjA4MzI2MDc3M30.DwhV3WZhCjnaZWsHOtyYXmhzqqJhrcPhr7E7AxhCAVk" 
+                src="https://hill.digweblance.com/assets/image/hillplots-1.jpg" 
                 alt="Premium Plots in Dehradun - Hill Plots Ethos" 
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                 onError={(e) => {
-                  // Fallback to high-quality stock if link fails or expires
+                  // Fallback to high-quality stock if link fails
                   (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=1200";
                 }}
               />

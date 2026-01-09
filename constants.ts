@@ -1,3 +1,4 @@
+
 import { PlotListing } from './types';
 
 export const PLOTS: PlotListing[] = [
@@ -10,7 +11,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "2 Kms from NH. Forest side.",
     price: "₹85 L",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 2,
@@ -21,7 +22,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "Near Resorts - ON Road",
     price: "₹18,000 / SQY",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 3,
@@ -32,7 +33,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "Near Road, 20ft entry road.",
     price: "₹1 Cr / Bigha",
-    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 4,
@@ -43,7 +44,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "20ft wide colony road.",
     price: "₹18,000 / SQY",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 5,
@@ -54,7 +55,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "Colony. 7 kms from NH.",
     price: "₹23,000 / SQY",
-    image: "https://images.unsplash.com/photo-1444464666168-49d633b867ad?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 6,
@@ -65,7 +66,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "8 kms from NH, Hill view.",
     price: "₹65 L / Bigha",
-    image: "https://images.unsplash.com/photo-1433838552652-f9a46b332c40?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 7,
@@ -76,7 +77,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "8 kms from NH, Hill view.",
     price: "₹65 L / Bigha",
-    image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 8,
@@ -87,7 +88,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "Hill & River view site.",
     price: "₹75 L / Bigha",
-    image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 9,
@@ -98,7 +99,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "School nearby area.",
     price: "₹10,000 / SQY",
-    image: "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 10,
@@ -109,7 +110,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "Double side road plot.",
     price: "₹13,000 / SQY",
-    image: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 11,
@@ -120,7 +121,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agri & 143 Awasiya",
     location: "Nearby schools area. (600SQY is 143)",
     price: "₹10,500 / SQY",
-    image: "https://images.unsplash.com/photo-1544735049-7175b6e41440?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 12,
@@ -131,7 +132,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture (Gated)",
     location: "25ft Colony Road.",
     price: "₹13,000 / SQY",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 13,
@@ -142,7 +143,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "Hill View. Independent.",
     price: "₹90 L Total",
-    image: "https://images.unsplash.com/photo-1493246507139-91e8bef99c02?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 14,
@@ -153,7 +154,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "Hill & River view.",
     price: "₹18,000 / SQY",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 15,
@@ -164,7 +165,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "15 Kms from Doon city.",
     price: "₹17,000 / SQY",
-    image: "https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   },
   {
     id: 16,
@@ -175,7 +176,7 @@ export const PLOTS: PlotListing[] = [
     propertyClass: "Agriculture",
     location: "High Hill View Site.",
     price: "₹8,500 / SQY",
-    image: "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&q=80&w=600"
+    image: "https://hill.digweblance.com/assets/image/hhp.jpeg"
   }
 ];
 
@@ -183,20 +184,62 @@ export const TESTIMONIALS = [
   {
     name: "Rajesh Kumar",
     role: "Property Investor",
-    text: "Buying a plot through Hill Plots was the best decision. Their transparency and knowledge of the Dehradun market are unmatched.",
+    text: "Buying a plot through Hill Plots was the most transparent real estate experience I've had in Uttarakhand. Their deep understanding of the Bhauwala corridor and direct-to-shareholder model eliminated all my anxieties about title verification.",
+    rating: 5
+  },
+  {
+    name: "Dr. Anjali Verma",
+    role: "Pediatrician",
+    text: "The air quality and the lush environment around the Pondha plots are incomparable. I bought a residential site here for my kids' future health. The team was incredibly patient and showed us the exact survey maps during the visit.",
     rating: 5
   },
   {
     name: "Priya Sharma",
     role: "Homeowner",
-    text: "I found my dream residential plot in Pondha. The team assisted with all legal paperwork. Highly recommended!",
+    text: "I found my dream residential plot in Pondha. The team assisted with all legal paperwork at the Vikasnagar Tehsil. They are the only ones I've met who don't push for a sale but rather encourage you to verify everything yourself.",
+    rating: 5
+  },
+  {
+    name: "Capt. Rohan Mehra",
+    role: "Airline Pilot",
+    text: "As a frequent traveler, I wanted a getaway plot that was secure and accessible. Hill Plots helped me find a stunning site near the Sal forests. Their zero-brokerage model saved me a significant amount, which I've now put into the boundary construction.",
     rating: 5
   },
   {
     name: "Amit Negi",
     role: "Agriculturist",
-    text: "Professional service and great deals on agricultural land. They truly understand the value of land in the hills.",
-    rating: 4
+    text: "Finding fertile agricultural land with proper water access is hard in Dehradun. These guys know the terrain perfectly. I acquired a 1 Bigha farm plot and the legal transition was smoother than I expected.",
+    rating: 5
+  },
+  {
+    name: "Vikram Singh",
+    role: "Tech Executive",
+    text: "Hill Plots made my investment journey seamless. The site visits were well-organized, and the transparency regarding the 143 Awasiya classification was a breath of fresh air compared to typical brokers in the city.",
+    rating: 5
+  },
+  {
+    name: "Shalini Iyer",
+    role: "Creative Director",
+    text: "I was looking for a 'sanctuary' rather than just a plot of land. The hill-view site they found for me is breathtaking. It's rare to find developers who appreciate the aesthetic value of the Himalayan landscape as much as they do.",
+    rating: 5
+  },
+  {
+    name: "Meera Das",
+    role: "Retiree",
+    text: "I always wanted a peaceful home in the hills for my retirement. Thanks to their transparent process and the 33% advance structure, I felt secure at every step. I now own a beautiful plot in Bhauwala, exactly as promised.",
+    rating: 5
+  },
+  {
+    name: "Manish Pandey",
+    role: "Govt. Official",
+    text: "Being in the government, I am very particular about legal compliance. Hill Plots exceeded my expectations. They provided the chain of documents upfront and the registration at the Registrar office was handled very professionally.",
+    rating: 5
+  },
+  {
+    name: "Sanjay Gupta",
+    role: "Business Owner",
+    text: "The shareholder model is a game changer. Dealing directly with the owners meant no hidden costs and a much more personal touch. Their knowledge of the upcoming development in the Dehradun corridor is very insightful.",
+    rating: 5
   }
 ];
 

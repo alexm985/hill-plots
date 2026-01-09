@@ -37,6 +37,10 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
 
   const activeFiltersCount = (typeFilter !== 'All' ? 1 : 0) + (priceFilter !== 'All' ? 1 : 0);
 
+  const handleBookVisit = (plotTitle: string, plotCode: string) => {
+    window.open(`https://wa.me/917017714385?text=Hello, I am interested in ${plotTitle} (${plotCode}). I would like to book a site visit.`, "_blank");
+  };
+
   return (
     <div className="pt-32 pb-24 bg-[#0E1A1A] min-h-screen">
       <div className="max-w-[1300px] mx-auto px-6 sm:px-10">
@@ -55,7 +59,7 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
                     </div>
                 </div>
 
-                {/* Desktop Filter Bar - Advanced UI */}
+                {/* Desktop Filter Bar */}
                 <div className="hidden lg:flex items-center bg-[#142626] border border-white/5 rounded-2xl p-2 shadow-2xl backdrop-blur-xl">
                     <div className="px-6 py-2 border-r border-white/5">
                         <label className="block text-[9px] uppercase tracking-widest text-[#C9A24D] font-black mb-2">Category</label>
@@ -111,7 +115,7 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
                     )}
                 </div>
 
-                {/* Mobile Filter Toggle Style (Responsive) */}
+                {/* Mobile Filter */}
                 <div className="lg:hidden flex flex-col gap-6">
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-3">
@@ -144,90 +148,61 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
             </div>
         </div>
 
-        {/* Listings Grid */}
+        {/* Listings Grid - Updated to match Home Page UI */}
         {filteredPlots.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPlots.map((plot) => (
                 <div 
-                key={plot.id} 
-                className="bg-[#142626] rounded-[20px] overflow-hidden flex flex-col group border border-white/5 transition-all duration-500 hover:-translate-y-3 hover:border-[#0097b2]/40 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8),0_0_40px_rgba(0,151,178,0.1)]"
+                  key={plot.id} 
+                  className="bg-[#142626] rounded-[12px] overflow-hidden flex flex-col group border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:border-[#0097b2]/40 hover:shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8),0_0_30px_rgba(0,151,178,0.1)]"
                 >
-                <div className="relative h-72 overflow-hidden">
+                  <div className="relative h-60 overflow-hidden">
                     <img 
-                    src={plot.image} 
-                    alt={plot.title} 
-                    className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-110"
+                      src={plot.image} 
+                      alt={plot.title} 
+                      className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-105"
                     />
-                    
-                    {/* Status Badge */}
-                    <div className="absolute top-6 left-6 flex flex-col gap-2 z-10">
-                        <span className="bg-[#0E1A1A]/80 backdrop-blur-md text-white border border-white/10 px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-[2px] shadow-2xl">
-                            {plot.type === 'Agriculture' ? 'Agricultural' : plot.type}
-                        </span>
+                    <div className="absolute top-4 left-4 bg-[#0097b2] text-white px-3 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider z-10 shadow-lg">
+                      {plot.type === 'Agriculture' ? 'Agricultural' : plot.type}
                     </div>
-
-                    {/* View Badge */}
-                    <div className="absolute top-6 right-6 z-10">
-                         <div className="bg-[#0097b2] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <i className="fas fa-eye text-[12px]"></i>
-                         </div>
-                    </div>
-
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A1A] via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-700"></div>
-                </div>
-                
-                <div className="p-8 flex flex-col flex-grow relative -mt-10 bg-[#142626] rounded-t-[30px] z-20">
-                    <div className="flex justify-between items-center mb-4">
-                        <span className="text-[#C9A24D] text-[10px] uppercase tracking-[3px] font-black py-1 px-3 bg-[#C9A24D]/5 rounded-md">
-                            {plot.code}
-                        </span>
-                        <div className="text-[#0097b2] text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
-                            <span className="w-2 h-2 rounded-full bg-[#0097b2] animate-pulse"></span>
-                            Available
-                        </div>
-                    </div>
-
-                    <h3 className="text-2xl font-normal heading-serif text-[#F5F7F6] mb-6 h-16 overflow-hidden leading-tight group-hover:text-[#0097b2] transition-colors duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A1A]/70 to-transparent opacity-40 group-hover:opacity-20 transition-opacity duration-500"></div>
+                  </div>
+                  
+                  <div className="p-7 flex flex-col flex-grow">
+                    <span className="text-[#C9A24D] text-[11px] uppercase tracking-[2px] font-bold mb-2">
+                        {plot.code}
+                    </span>
+                    <h3 className="text-xl font-normal heading-serif text-[#F5F7F6] mb-4 h-14 overflow-hidden leading-snug group-hover:text-[#0097b2] transition-colors duration-300">
                         {plot.title}
                     </h3>
                     
-                    <div className="grid grid-cols-2 gap-y-4 gap-x-6 mb-8 py-6 border-y border-white/5">
-                        <div className="space-y-1">
-                            <span className="text-[9px] uppercase tracking-widest text-[#A7B7B3] font-bold">Location</span>
-                            <p className="text-xs text-white font-serif italic truncate">{plot.location}</p>
+                    <div className="text-[13px] text-[#A7B7B3] mb-6 py-3 border-y border-white/5 flex flex-col gap-2 flex-grow">
+                        <div className="flex justify-between items-center">
+                            <span className="opacity-60 italic">Location:</span>
+                            <b className="font-normal italic text-[#F5F7F6] text-right ml-4">{plot.location}</b>
                         </div>
-                        <div className="space-y-1">
-                            <span className="text-[9px] uppercase tracking-widest text-[#A7B7B3] font-bold">Dimensions</span>
-                            <p className="text-xs text-white font-serif italic">{plot.size}</p>
+                        <div className="flex justify-between items-center">
+                            <span className="opacity-60 italic">Size:</span>
+                            <b className="font-normal italic text-[#F5F7F6]">{plot.size}</b>
                         </div>
-                        <div className="space-y-1">
-                            <span className="text-[9px] uppercase tracking-widest text-[#A7B7B3] font-bold">Classification</span>
-                            <p className="text-xs text-white font-serif italic">{plot.propertyClass}</p>
-                        </div>
-                        <div className="space-y-1">
-                            <span className="text-[9px] uppercase tracking-widest text-[#A7B7B3] font-bold">Ownership</span>
-                            <p className="text-xs text-white font-serif italic">Verified</p>
+                        <div className="flex justify-between items-center">
+                            <span className="opacity-60 italic">Class:</span>
+                            <b className="font-normal italic text-[#F5F7F6]">{plot.propertyClass}</b>
                         </div>
                     </div>
                     
-                    <div className="flex items-center justify-between mt-auto">
-                        <div className="flex flex-col">
-                            <span className="text-[9px] uppercase tracking-widest text-[#A7B7B3] font-bold mb-1">Inaugural Price</span>
-                            <div className="text-2xl font-black text-white tracking-tight">
-                                {plot.price}
-                            </div>
+                    <div className="flex items-center justify-between mt-auto pt-2">
+                        <div className="text-lg font-bold text-[#0097b2] tracking-tight">
+                            {plot.price}
                         </div>
-                        <a 
-                            href={`https://wa.me/917017714385?text=I am interested in ${plot.title} (${plot.code})`}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="bg-[#0097b2] hover:bg-white text-white hover:text-[#0E1A1A] p-4 rounded-2xl transition-all duration-300 transform active:scale-95 flex items-center justify-center"
-                            title="Inquire via WhatsApp"
+                        <button 
+                            onClick={() => handleBookVisit(plot.title, plot.code)}
+                            className="bg-transparent border border-[#0097b2] text-[#0097b2] hover:bg-[#0097b2] hover:text-white px-4 py-2 text-[11px] font-bold uppercase tracking-widest transition-all duration-300 transform active:scale-95 rounded-[10px]"
                         >
-                            <i className="fab fa-whatsapp text-xl"></i>
-                        </a>
+                            Book Visit
+                        </button>
                     </div>
-                </div>
+                  </div>
                 </div>
             ))}
             </div>

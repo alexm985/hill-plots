@@ -113,7 +113,6 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, forceSolid
             </nav>
             
             <div className="lg:hidden flex items-center">
-              {/* WhatsApp link removed from mobile nav bar to avoid clutter with the floating button */}
               <button 
                 className="text-white text-2xl focus:outline-none" 
                 aria-label="Toggle Menu"
@@ -172,7 +171,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, forceSolid
             <div className="flex justify-center space-x-8 mt-10">
               <a href="#" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors"><i className="fab fa-instagram"></i></a>
               <a href="#" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors"><i className="fab fa-facebook-f"></i></a>
-              <a href="#" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors"><i className="fab fa-youtube"></i></a>
+              <a href="https://www.youtube.com/@hillplots" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors"><i className="fab fa-youtube"></i></a>
             </div>
           </div>
         </div>

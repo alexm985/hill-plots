@@ -108,6 +108,7 @@ const ContactForm: React.FC = () => {
             <div className="flex items-center space-x-10">
                 <a href="#" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-lg"><i className="fab fa-facebook-f"></i></a>
                 <a href="#" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-lg"><i className="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@hillplots" target="_blank" rel="noopener noreferrer" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-lg"><i className="fab fa-youtube"></i></a>
             </div>
             <p className="text-[#A7B7B3]/50 text-[10px] uppercase tracking-[2px]">© 2026 Hill Plots Dehradun. Transparent Himalayan Real Estate.</p>
         </div>
