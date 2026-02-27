@@ -32,8 +32,9 @@ const ContactForm: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-8 bg-[#142626] p-8 md:p-12 border border-white/5 rounded-[10px] shadow-2xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="group">
-              <label className="block text-[11px] font-bold uppercase tracking-[3px] text-[#C9A24D] mb-3">Full Name</label>
+              <label htmlFor="name" className="block text-[11px] font-bold uppercase tracking-[3px] text-[#C9A24D] mb-3">Full Name</label>
               <input
+                id="name"
                 type="text"
                 required
                 value={formData.name}
@@ -43,8 +44,9 @@ const ContactForm: React.FC = () => {
               />
             </div>
             <div className="group">
-              <label className="block text-[11px] font-bold uppercase tracking-[3px] text-[#C9A24D] mb-3">Phone Number</label>
+              <label htmlFor="phone" className="block text-[11px] font-bold uppercase tracking-[3px] text-[#C9A24D] mb-3">Phone Number</label>
               <input
+                id="phone"
                 type="tel"
                 required
                 value={formData.phone}
@@ -56,9 +58,10 @@ const ContactForm: React.FC = () => {
           </div>
           
           <div>
-            <label className="block text-[11px] font-bold uppercase tracking-[3px] text-[#C9A24D] mb-3">Plot Interest</label>
+            <label htmlFor="interest" className="block text-[11px] font-bold uppercase tracking-[3px] text-[#C9A24D] mb-3">Plot Interest</label>
             <div className="relative">
                 <select
+                id="interest"
                 value={formData.interest}
                 onChange={(e) => setFormData({...formData, interest: e.target.value})}
                 className="w-full bg-[#0E1A1A] border border-white/10 p-4 text-[#F5F7F6] focus:outline-none focus:border-[#0097b2] transition-all appearance-none cursor-pointer font-serif rounded-[10px]"
@@ -75,8 +78,9 @@ const ContactForm: React.FC = () => {
           </div>
           
           <div>
-            <label className="block text-[11px] font-bold uppercase tracking-[3px] text-[#C9A24D] mb-3">Your Message</label>
+            <label htmlFor="message" className="block text-[11px] font-bold uppercase tracking-[3px] text-[#C9A24D] mb-3">Your Message</label>
             <textarea
+              id="message"
               rows={4}
               value={formData.message}
               onChange={(e) => setFormData({...formData, message: e.target.value})}
