@@ -1,0 +1,3 @@
+## 2024-03-01 - Missing Accessible Names on Icon Links and Missing Label Associations
+**Learning:** In this project, there is a recurring pattern of using Font Awesome icons for links without providing an accessible name (e.g., social media links, WhatsApp button). This makes them opaque to screen readers. Another recurring issue is missing `htmlFor` and `id` bindings between `<label>` and `<input>`/`<select>` fields, violating basic form accessibility.
+**Action:** When working on new components or auditing existing ones, always check that icon-only interactive elements have an `aria-label` attribute and that form labels are explicitly associated with their controls via `htmlFor` and `id`.

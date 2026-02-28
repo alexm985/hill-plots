@@ -109,6 +109,7 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
                             onClick={() => { setTypeFilter('All'); setPriceFilter('All'); }}
                             className="ml-4 mr-4 p-3 text-[#A7B7B3] hover:text-[#0097b2] transition-colors"
                             title="Reset Filters"
+                            aria-label="Reset Filters"
                         >
                             <i className="fas fa-undo-alt text-sm"></i>
                         </button>
@@ -119,8 +120,9 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
                 <div className="lg:hidden flex flex-col gap-6">
                     <div className="grid grid-cols-2 gap-4">
                         <div className="space-y-3">
-                            <label className="text-[10px] uppercase tracking-widest text-[#C9A24D] font-bold pl-1">Property Type</label>
+                            <label htmlFor="property-type" className="text-[10px] uppercase tracking-widest text-[#C9A24D] font-bold pl-1">Property Type</label>
                             <select 
+                                id="property-type"
                                 value={typeFilter}
                                 onChange={(e) => setTypeFilter(e.target.value as any)}
                                 className="w-full bg-[#142626] border border-white/10 text-white p-4 rounded-xl text-sm font-bold appearance-none outline-none focus:border-[#0097b2]"
@@ -131,8 +133,9 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
                             </select>
                         </div>
                         <div className="space-y-3">
-                            <label className="text-[10px] uppercase tracking-widest text-[#C9A24D] font-bold pl-1">Investment</label>
+                            <label htmlFor="investment-range" className="text-[10px] uppercase tracking-widest text-[#C9A24D] font-bold pl-1">Investment</label>
                             <select 
+                                id="investment-range"
                                 value={priceFilter}
                                 onChange={(e) => setPriceFilter(e.target.value as any)}
                                 className="w-full bg-[#142626] border border-white/10 text-white p-4 rounded-xl text-sm font-bold appearance-none outline-none focus:border-[#C9A24D]"
