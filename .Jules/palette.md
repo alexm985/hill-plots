@@ -1,0 +1,3 @@
+## 2023-10-27 - Icon-Only Social Media Links Missing ARIA Labels
+**Learning:** This app extensively uses icon-only `<a>` tags for social media links (e.g., WhatsApp, Instagram, Facebook, YouTube) in various components like the Header, ContactForm, and App footer without accompanying visible text or accessible names. Screen readers can't read meaningful information from these links, creating an accessibility barrier.
+**Action:** Applied `aria-label`s to all icon-only social links. In the future, explicitly define `aria-label` attributes or add visually hidden `.sr-only` text alongside icons when implementing any icon-only interactive elements in this app.
