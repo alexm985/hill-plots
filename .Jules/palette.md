@@ -1,0 +1,3 @@
+## 2024-05-24 - Form Component Accessibility
+**Learning:** Custom form components in this project may lack `id` and `htmlFor` attributes on inputs and labels.
+**Action:** Always actively link `<label>` tags with their corresponding `<input>`, `<textarea>`, or `<select>` fields using matching `htmlFor` and `id` attributes to ensure proper accessibility for screen readers and improve mobile click/tap-to-focus behavior.
