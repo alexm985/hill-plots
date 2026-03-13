@@ -72,12 +72,14 @@ const Hero: React.FC<HeroProps> = ({ setCurrentPage }) => {
         <button 
           onClick={prevSlide}
           className="pointer-events-auto w-12 h-12 md:w-16 md:h-16 flex items-center justify-center border border-white/10 text-white/50 hover:text-white hover:border-[#0097b2] hover:bg-[#0097b2]/10 transition-all duration-300 rounded-full bg-black/10 backdrop-blur-sm group"
+          aria-label="Previous slide"
         >
           <i className="fas fa-chevron-left text-lg md:text-xl group-hover:-translate-x-1 transition-transform"></i>
         </button>
         <button 
           onClick={nextSlide}
           className="pointer-events-auto w-12 h-12 md:w-16 md:h-16 flex items-center justify-center border border-white/10 text-white/50 hover:text-white hover:border-[#0097b2] hover:bg-[#0097b2]/10 transition-all duration-300 rounded-full bg-black/10 backdrop-blur-sm group"
+          aria-label="Next slide"
         >
           <i className="fas fa-chevron-right text-lg md:text-xl group-hover:translate-x-1 transition-transform"></i>
         </button>

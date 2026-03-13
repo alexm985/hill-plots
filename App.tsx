@@ -182,9 +182,9 @@ const App: React.FC = () => {
 
             <div className="pt-12 border-t border-white/5">
                 <div className="flex justify-center space-x-10 mb-10">
-                    <a href="#" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-2xl"><i className="fab fa-facebook-f"></i></a>
-                    <a href="#" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-2xl"><i className="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/@hillplots" target="_blank" rel="noopener noreferrer" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-2xl"><i className="fab fa-youtube"></i></a>
+                    <a href="#" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-2xl" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
+                    <a href="#" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-2xl" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@hillplots" target="_blank" rel="noopener noreferrer" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-2xl" aria-label="YouTube"><i className="fab fa-youtube"></i></a>
                 </div>
                 
                 <div className="flex flex-col items-center justify-center space-y-4">
