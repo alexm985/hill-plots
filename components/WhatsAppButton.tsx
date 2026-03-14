@@ -9,6 +9,7 @@ const WhatsAppButton: React.FC = () => {
             target="_blank" 
             rel="noopener noreferrer"
             className="group relative"
+            aria-label="Chat with us on WhatsApp"
         >
             <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-25"></div>
             <div className="bg-[#25D366] w-[60px] h-[60px] rounded-full shadow-2xl flex items-center justify-center text-white transition-all duration-500 hover:scale-110 active:scale-95 z-10 relative animate-bounce-custom">
