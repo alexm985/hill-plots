@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing id/htmlFor Attributes in Forms
+**Learning:** Found an accessibility pattern where inputs in custom forms (like `AreaCalculator`) lack `id` and `htmlFor` attributes on their associated labels. This prevents users, particularly on mobile devices, from clicking the label to focus the input field, which degrades usability and accessibility.
+**Action:** Always ensure custom form components have their `id` and `htmlFor` attributes actively linked for proper accessibility and mobile click-to-focus behavior.
