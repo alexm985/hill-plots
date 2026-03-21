@@ -1,0 +1,3 @@
+## 2024-05-24 - Form Input Label Accessibility
+**Learning:** Found multiple form inputs (`AreaCalculator.tsx`, `ContactForm.tsx`) that used visually placed `<label>` tags adjacent to `<input>` fields, but lacked programmatic associations (no `htmlFor` on label, no `id` on input). This prevents screen readers from correctly announcing the purpose of inputs and breaks native click-to-focus behavior on labels, particularly on mobile devices where tap targets are important.
+**Action:** Always ensure custom form components have their `id` and `htmlFor` attributes actively linked. When reviewing React components with inputs, explicitly check that each input has an `id` that matches the corresponding label's `htmlFor` attribute.
