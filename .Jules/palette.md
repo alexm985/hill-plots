@@ -1,0 +1,3 @@
+## 2025-03-22 - Form Input Accessibility & UX
+**Learning:** Found that custom number inputs in `components/AreaCalculator.tsx` lacked `id` attributes and their `label`s lacked `htmlFor`, impairing screen reader context and mobile "click-to-focus". Also discovered that inputs representing physical dimensions and currency lacked `min="0"` constraints.
+**Action:** Always link form labels to inputs with `id` and `htmlFor` attributes to support accessibility and tap targets. Add logical bounds like `min="0"` to number inputs representing sizes or prices to prevent invalid negative values and enhance the user experience before submission.

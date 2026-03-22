@@ -48,9 +48,11 @@ const AreaCalculator: React.FC = () => {
               
               <div className="space-y-6">
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Front Width (ft)</label>
+                  <label htmlFor="frontWidth" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Front Width (ft)</label>
                   <input 
+                    id="frontWidth"
                     type="number" 
+                    min="0"
                     value={length}
                     onChange={(e) => setLength(e.target.value)}
                     className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
@@ -58,9 +60,11 @@ const AreaCalculator: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Depth / Side (ft)</label>
+                  <label htmlFor="depthSide" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Depth / Side (ft)</label>
                   <input 
+                    id="depthSide"
                     type="number" 
+                    min="0"
                     value={width}
                     onChange={(e) => setWidth(e.target.value)}
                     className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
@@ -68,9 +72,11 @@ const AreaCalculator: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Rate per Sq. Yard (₹)</label>
+                  <label htmlFor="ratePerSqYard" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Rate per Sq. Yard (₹)</label>
                   <input 
+                    id="ratePerSqYard"
                     type="number" 
+                    min="0"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                     className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
