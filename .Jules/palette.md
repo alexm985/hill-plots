@@ -1,0 +1,3 @@
+## 2024-03-24 - Form Validation and Accessibility
+**Learning:** Avoiding native browser alert() for validation and replacing it with conditionally rendered inline error messages using role="alert" provides better UX and screen reader compatibility. Additionally, ensuring all form labels and inputs are actively linked with htmlFor and id attributes is a critical accessibility pattern for both screen readers and mobile tap-to-focus behavior.
+**Action:** Always implement inline, accessible error states instead of native alerts, and meticulously verify id/htmlFor linkages on all custom form components.
