@@ -109,8 +109,9 @@ const HotPlots: React.FC<HotPlotsProps> = ({ onRequestDetails }) => {
                             onClick={() => { setTypeFilter('All'); setPriceFilter('All'); }}
                             className="ml-4 mr-4 p-3 text-[#A7B7B3] hover:text-[#0097b2] transition-colors"
                             title="Reset Filters"
+                            aria-label="Reset Filters"
                         >
-                            <i className="fas fa-undo-alt text-sm"></i>
+                            <i className="fas fa-undo-alt text-sm" aria-hidden="true"></i>
                         </button>
                     )}
                 </div>
