@@ -1,0 +1,3 @@
+## 2024-05-14 - Add ARIA Labels to Icon-Only Buttons
+**Learning:** Found that several interactive icon-only buttons (using Font Awesome `<i>` elements without visible text) in components like Hero and HotPlots lacked proper ARIA labels. This causes screen readers to potentially announce meaningless information or not understand the function of these interactive elements.
+**Action:** Always ensure that icon-only buttons receive an explicit `aria-label` attribute on the `<button>` to clearly describe their action to assistive technology. Furthermore, add `aria-hidden="true"` to the decorative inner `<i>` tag to hide it from screen readers, preventing redundant or confusing announcements.
