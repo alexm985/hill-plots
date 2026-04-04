@@ -1,0 +1,3 @@
+## 2025-04-04 - [Inline Errors & Accessible Form Labels]
+**Learning:** Replacing native browser `alert()` with inline errors wrapped in `role="alert"` improves clarity for all users and guarantees error accessibility for screen readers. Furthermore, adding `id` and `htmlFor` explicitly linked labels ensures tap targets are fully accessible and mobile "click-to-focus" behaviors work correctly.
+**Action:** Always avoid native browser alerts for input validation in modern React apps. Utilize conditional rendering to display error messages. Moreover, always explicitly link labels to their input equivalents when developing forms.
