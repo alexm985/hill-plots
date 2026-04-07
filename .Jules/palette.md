@@ -1,0 +1,3 @@
+## 2025-02-28 - Form Accessibility and Inline Validation
+**Learning:** Native browser `alert()` popups are disruptive and break the user flow, creating a poor experience, especially for screen-reader users who may lose context. Furthermore, input fields without explicitly linked labels (`htmlFor` matching `id`) fail WCAG criteria, preventing click-to-focus on mobile devices.
+**Action:** Always replace `alert()` calls with conditionally rendered inline error messages using `role="alert"` for form validation. Always ensure form components have their `id` and `htmlFor` attributes actively linked for proper accessibility and improved mobile interaction.
