@@ -1,0 +1,3 @@
+## 2025-03-09 - Accessible Form Validation and Label Linking
+**Learning:** In the `AreaCalculator` component, form validation previously relied on the native browser `alert()`, which is jarring and inaccessible to screen readers. Additionally, inputs lacked proper linkage to their labels, impairing mobile click-to-focus and screen reader context.
+**Action:** Replace native `alert()` calls with inline error messages using `role="alert"` conditional on an `error` state. Always ensure custom form components have their `id` and `htmlFor` attributes actively linked. This is a reusable pattern for all forms in this application.
