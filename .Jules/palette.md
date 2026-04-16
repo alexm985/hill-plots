@@ -1,0 +1,3 @@
+## 2023-10-27 - Added Accessibility to Icon Buttons and Forms
+**Learning:** Found a recurring pattern in the app where Font Awesome `<i>` elements within interactive components (like slide navigation and WhatsApp buttons) lacked `aria-hidden="true"`, and the parent buttons or anchor links were missing `aria-label` attributes. Additionally, custom form components (like in the Area Calculator) were using visual labels but lacked explicit `id` and `htmlFor` linkage, hindering screen reader usability and mobile click-to-focus behavior.
+**Action:** Consistently apply `aria-label` to icon-only buttons/links, `aria-hidden="true"` to decorative icon tags (like Font Awesome `<i>` tags), and explicitly link form labels to inputs using `htmlFor` and `id`.
