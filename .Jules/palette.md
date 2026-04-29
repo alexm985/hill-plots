@@ -1,0 +1,3 @@
+## 2024-04-29 - [Avoid native alerts for validation]
+**Learning:** Native `alert()` dialogs in React applications create a jarring UX, block the main thread, and are not screen-reader friendly.
+**Action:** Replace `alert()` calls with inline error messages using `role="alert"` for better context, non-blocking feedback, and screen reader announcements. Also, ensure inputs and labels are linked via `id` and `htmlFor` for better click-to-focus accessibility.
