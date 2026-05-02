@@ -1,0 +1,3 @@
+## 2025-05-02 - Font Awesome Icon Accessibility
+**Learning:** Found a widespread pattern in this app where Font Awesome icons inside interactive elements (buttons, links) lacked `aria-hidden="true"`, and their parent elements lacked `aria-label` attributes. This makes these interactive elements essentially invisible or poorly described to screen reader users.
+**Action:** When working on this application, always explicitly check any `<i>` tags rendering Font Awesome icons. Ensure the `<i>` tag has `aria-hidden="true"` and that its parent `<button>` or `<a>` tag has an appropriate `aria-label` if it relies solely on the icon for meaning.
