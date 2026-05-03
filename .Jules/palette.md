@@ -1,0 +1,3 @@
+## 2024-05-18 - Form Label Accessibility
+**Learning:** Custom UI inputs without linked `id` and `htmlFor` attributes suffer from poor accessibility. Users on mobile devices expect tapping on a label to focus the corresponding input.
+**Action:** Always link custom `<label>` elements to their corresponding `<input>` using `htmlFor` and `id` attributes to ensure correct tap-to-focus behavior and improve accessibility for screen readers.
