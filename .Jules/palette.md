@@ -1,0 +1,3 @@
+## 2024-05-10 - Icon-Only Button Accessibility Pattern
+**Learning:** The project relies heavily on Font Awesome icons inside interactive elements (like the previous/next buttons in the Hero slider or the WhatsApp button) without visible text. Missing ARIA labels and focus states make these un-navigable for screen readers and keyboard users.
+**Action:** When adding or modifying icon-only buttons, always add `aria-label="[Description]"` to the parent `<button>`/`<a>`, `aria-hidden="true"` to the inner `<i>` tag, and include Tailwind's `focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0097b2]` classes for visible keyboard focus states.
