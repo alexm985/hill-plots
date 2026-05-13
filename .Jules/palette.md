@@ -1,0 +1,3 @@
+## 2023-10-27 - Floating Action Buttons Need Semantic Context & Keyboard Indicators
+**Learning:** Floating action buttons (like WhatsApp or Help buttons) are often purely visual with icons and tooltips. Without explicit `aria-label` attributes and keyboard focus styling (`focus-visible`), they are completely opaque to screen readers and difficult to navigate to for keyboard users, despite being prominent UI elements. The inner graphical elements should also be hidden using `aria-hidden="true"`.
+**Action:** Always ensure that floating action buttons acting as links or primary interactive elements have an explicit, descriptive `aria-label`, hide their inner visual components with `aria-hidden`, and include clear keyboard focus indicators (e.g., `focus-visible:ring-4`).
