@@ -1,0 +1,3 @@
+## 2025-05-14 - Interactive Elements Missing ARIA and Focus Styles
+**Learning:** Found custom interactive elements (like the navigation arrows in the Hero component) that rely solely on Font Awesome icons without providing accessible text or keyboard focus indicators.
+**Action:** When adding or modifying interactive elements containing only icons (e.g., `<button>` or `<a>` with `<i>` child), always provide an `aria-label` attribute on the interactive parent, apply `aria-hidden="true"` to the decorative icon child, and implement `focus-visible` styles to ensure the element is usable by screen readers and keyboard-only users.
