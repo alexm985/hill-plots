@@ -1,0 +1,3 @@
+## 2024-05-18 - Replacing alerts with inline form validation
+**Learning:** Native browser `alert()` popups disrupt user flow and screen reader context when validating forms like the Area Calculator. In contrast, using conditionally rendered inline text with `role="alert"` maintains flow and provides immediate accessibility. Linking `label` correctly using `htmlFor` allows mobile users to tap labels directly, enhancing UX specifically in inputs on smaller screens.
+**Action:** When validating form components or numeric inputs, always use inline state-driven error messages with ARIA roles instead of `alert()`, and explicitly map `id` properties to `htmlFor` on all associated labels.
