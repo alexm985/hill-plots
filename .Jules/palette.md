@@ -1,0 +1,3 @@
+## 2026-05-17 - Hover vs Focus Visibility for Tooltips
+**Learning:** Purely hover-based tooltips on interactive elements fail for keyboard users. While a group hover class ('group-hover') might reveal a tooltip for mouse users, keyboard users tabbing through interactive elements won't see it unless we explicitly add a matching group focus-visible class ('group-focus-visible').
+**Action:** When adding hover-based animations or tooltips to interactive elements using Tailwind (like 'group-hover'), consistently mirror them with 'group-focus-visible' classes to ensure keyboard navigation accessibility.
