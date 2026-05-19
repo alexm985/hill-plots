@@ -1,0 +1,3 @@
+## 2025-03-01 - Inline Form Validation Error
+**Learning:** Native `alert()` calls for form validation disrupt the user experience, especially on mobile, and are not well-supported by screen readers. Integrating inline validation messages with `role="alert"` combined with correctly linked `<label>`s provides a significantly more accessible and cohesive user interaction pattern.
+**Action:** Always replace native alerts with conditionally rendered DOM elements using `role="alert"` and ensure that all form inputs are properly associated with their labels using `id` and `htmlFor` attributes to support click-to-focus and screen readers.
