@@ -4,6 +4,7 @@ const AreaCalculator: React.FC = () => {
   const [length, setLength] = useState<string>('');
   const [width, setWidth] = useState<string>('');
   const [price, setPrice] = useState<string>('');
+  const [error, setError] = useState<string | null>(null);
   const [results, setResults] = useState({
     totalCost: 0,
     sqYards: 0,
@@ -13,12 +14,13 @@ const AreaCalculator: React.FC = () => {
   });
 
   const calculate = () => {
+    setError(null);
     const l = parseFloat(length) || 0;
     const w = parseFloat(width) || 0;
     const p = parseFloat(price) || 0;
 
     if (l <= 0 || w <= 0) {
-      alert("Please enter valid positive dimensions.");
+      setError("Please enter valid positive dimensions for width and depth.");
       return;
     }
 
@@ -47,9 +49,15 @@ const AreaCalculator: React.FC = () => {
               <h3 className="text-2xl font-bold heading-serif mb-8 text-[#F5F7F6]">Area Calculator</h3>
               
               <div className="space-y-6">
+                {error && (
+                  <div role="alert" className="bg-red-500/10 border border-red-500/50 text-red-400 px-4 py-3 rounded-[10px] text-sm">
+                    {error}
+                  </div>
+                )}
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Front Width (ft)</label>
+                  <label htmlFor="front-width" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Front Width (ft)</label>
                   <input 
+                    id="front-width"
                     type="number" 
                     value={length}
                     onChange={(e) => setLength(e.target.value)}
@@ -58,8 +66,9 @@ const AreaCalculator: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Depth / Side (ft)</label>
+                  <label htmlFor="depth-side" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Depth / Side (ft)</label>
                   <input 
+                    id="depth-side"
                     type="number" 
                     value={width}
                     onChange={(e) => setWidth(e.target.value)}
@@ -68,8 +77,9 @@ const AreaCalculator: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Rate per Sq. Yard (₹)</label>
+                  <label htmlFor="rate-sq-yard" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Rate per Sq. Yard (₹)</label>
                   <input 
+                    id="rate-sq-yard"
                     type="number" 
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
@@ -79,7 +89,7 @@ const AreaCalculator: React.FC = () => {
                 </div>
                 <button 
                   onClick={calculate}
-                  className="w-full bg-[#0097b2] hover:bg-transparent border border-[#0097b2] text-white hover:text-[#0097b2] py-4 font-bold uppercase tracking-widest transition-all mt-4 rounded-[10px]"
+                  className="w-full bg-[#0097b2] hover:bg-transparent border border-[#0097b2] text-white hover:text-[#0097b2] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0097b2] focus-visible:ring-offset-[#0E1A1A] outline-none py-4 font-bold uppercase tracking-widest transition-all mt-4 rounded-[10px]"
                 >
                   Show Results
                 </button>
