@@ -1,0 +1,3 @@
+## 2024-05-21 - Form Validation Accessibility
+**Learning:** Native `alert()` calls for form validation are disruptive and inaccessible to screen readers. Replacing them with inline, conditionally rendered error messages using `role="alert"` significantly improves the user experience and accessibility. Additionally, ensuring all custom input fields are linked to their corresponding `<label>` via `id` and `htmlFor` attributes is crucial for mobile click-to-focus and screen reader context.
+**Action:** Always favor inline error states with ARIA roles over native browser alerts, and enforce the `htmlFor` / `id` linkage on all custom form components.
