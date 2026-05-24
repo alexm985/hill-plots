@@ -169,9 +169,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, forceSolid
               Book Site Visit
             </a>
             <div className="flex justify-center space-x-8 mt-10">
-              <a href="#" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors"><i className="fab fa-instagram"></i></a>
-              <a href="#" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors"><i className="fab fa-facebook-f"></i></a>
-              <a href="https://www.youtube.com/@hillplots" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors"><i className="fab fa-youtube"></i></a>
+              <a href="#" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0097b2] rounded-sm" aria-label="Visit our Instagram page"><i className="fab fa-instagram" aria-hidden="true"></i></a>
+              <a href="#" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0097b2] rounded-sm" aria-label="Visit our Facebook page"><i className="fab fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="https://www.youtube.com/@hillplots" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0097b2] rounded-sm" aria-label="Visit our YouTube channel"><i className="fab fa-youtube" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
