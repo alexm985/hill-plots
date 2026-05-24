@@ -1,0 +1,3 @@
+## 2024-05-18 - Avoid redundant screen reader output on animated tooltips
+**Learning:** Animated floating action buttons (like WhatsApp buttons) with purely visual ping/bounce effects and mirrored tooltips can severely clutter screen reader output if not explicitly hidden. The tooltip text "Chat with us" was functionally redundant when an aria-label "Chat with us on WhatsApp" was added to the parent link.
+**Action:** When adding aria-labels to icon-only links containing visual flair or tooltips, always add `aria-hidden="true"` to the decorative child elements (including the tooltip element itself) to ensure a clean, single announcement for screen reader users.
