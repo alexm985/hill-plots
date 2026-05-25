@@ -1,0 +1,3 @@
+## 2025-02-24 - Interactive Tooltip Keyboard Accessibility
+**Learning:** When using Tailwind CSS `group-hover` for interactive components with supplementary visual tooltips, the tooltip won't be visible to keyboard users navigating via Tab unless accompanied by `group-focus-visible` classes. For icon-only buttons, pairing this visible tooltip text with an ARIA label on the interactive parent element ensures a robust experience for both visual keyboard users and screen readers.
+**Action:** Always map hover-based transitions to focus-visible states (e.g., pairing `group-hover:opacity-100` with `group-focus-visible:opacity-100`) and ensure the parent interactive element has `focus-visible` indicator rings when implementing supplementary tooltips.
