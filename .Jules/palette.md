@@ -1,0 +1,3 @@
+## 2024-05-29 - Floating Action Button Keyboard Accessibility
+**Learning:** Tooltips on floating action buttons that rely solely on `group-hover` are completely inaccessible to keyboard users, preventing them from reading the call-to-action text. Furthermore, omitting `aria-hidden="true"` on FontAwesome icons and redundant tooltip text causes screen readers to duplicate the `aria-label` content, creating a noisy experience.
+**Action:** Always mirror `group-hover` state classes with `group-focus-visible` to ensure interactive elements are fully accessible via keyboard navigation. Additionally, when using an explicit `aria-label` on the parent container, ensure inner descriptive elements (like icons and tooltips) are explicitly hidden using `aria-hidden="true"`.
