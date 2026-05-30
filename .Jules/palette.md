@@ -1,0 +1,3 @@
+## 2026-05-30 - Inline Validation and Form Accessibility
+**Learning:** Native browser alerts for form validation cause disruptive context switches and are poorly handled by screen readers. Furthermore, inputs lacking explicit label associations (via `id` and `htmlFor`) reduce the hit area on mobile and fail to provide accessible names to assistive tech.
+**Action:** Always replace `alert()` calls in forms with inline, conditionally rendered error messages using `role="alert"`, and strictly enforce linking all `<label>` elements to their corresponding `<input>` via `id` and `htmlFor` attributes.
