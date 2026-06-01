@@ -4,6 +4,7 @@ const AreaCalculator: React.FC = () => {
   const [length, setLength] = useState<string>('');
   const [width, setWidth] = useState<string>('');
   const [price, setPrice] = useState<string>('');
+  const [error, setError] = useState<string>('');
   const [results, setResults] = useState({
     totalCost: 0,
     sqYards: 0,
@@ -13,12 +14,13 @@ const AreaCalculator: React.FC = () => {
   });
 
   const calculate = () => {
+    setError('');
     const l = parseFloat(length) || 0;
     const w = parseFloat(width) || 0;
     const p = parseFloat(price) || 0;
 
     if (l <= 0 || w <= 0) {
-      alert("Please enter valid positive dimensions.");
+      setError("Please enter valid positive dimensions.");
       return;
     }
 
@@ -46,40 +48,49 @@ const AreaCalculator: React.FC = () => {
             <div className="flex flex-col">
               <h3 className="text-2xl font-bold heading-serif mb-8 text-[#F5F7F6]">Area Calculator</h3>
               
+              {error && (
+                <div role="alert" className="text-red-400 text-sm mb-6 bg-red-400/10 border border-red-400/20 p-3 rounded-[10px]">
+                  {error}
+                </div>
+              )}
+
               <div className="space-y-6">
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Front Width (ft)</label>
+                  <label htmlFor="front-width" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Front Width (ft)</label>
                   <input 
+                    id="front-width"
                     type="number" 
                     value={length}
-                    onChange={(e) => setLength(e.target.value)}
-                    className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
+                    onChange={(e) => { setLength(e.target.value); setError(''); }}
+                    className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] focus-visible:ring-2 focus-visible:ring-[#0097b2]/50 transition-all font-serif rounded-[10px]"
                     placeholder="Enter feet"
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Depth / Side (ft)</label>
+                  <label htmlFor="depth-side" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Depth / Side (ft)</label>
                   <input 
+                    id="depth-side"
                     type="number" 
                     value={width}
-                    onChange={(e) => setWidth(e.target.value)}
-                    className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
+                    onChange={(e) => { setWidth(e.target.value); setError(''); }}
+                    className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] focus-visible:ring-2 focus-visible:ring-[#0097b2]/50 transition-all font-serif rounded-[10px]"
                     placeholder="Enter feet"
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Rate per Sq. Yard (₹)</label>
+                  <label htmlFor="rate-price" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Rate per Sq. Yard (₹)</label>
                   <input 
+                    id="rate-price"
                     type="number" 
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
-                    className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
+                    className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] focus-visible:ring-2 focus-visible:ring-[#0097b2]/50 transition-all font-serif rounded-[10px]"
                     placeholder="Enter rate"
                   />
                 </div>
                 <button 
                   onClick={calculate}
-                  className="w-full bg-[#0097b2] hover:bg-transparent border border-[#0097b2] text-white hover:text-[#0097b2] py-4 font-bold uppercase tracking-widest transition-all mt-4 rounded-[10px]"
+                  className="w-full bg-[#0097b2] hover:bg-transparent border border-[#0097b2] text-white hover:text-[#0097b2] py-4 font-bold uppercase tracking-widest transition-all mt-4 rounded-[10px] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0E1A1A]"
                 >
                   Show Results
                 </button>
