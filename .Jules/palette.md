@@ -1,0 +1,3 @@
+## 2024-05-17 - Avoid Native Alerts for Form Validation
+**Learning:** This app previously used native `alert()` dialogs in the `AreaCalculator` component for input validation. Native alerts create a poor UX because they block the main UI thread, stop users in their tracks, and are inaccessible to many screen readers in the context of the page flow.
+**Action:** Replace `alert()` validations with accessible inline error messages. Always ensure these messages use the `role="alert"` attribute so screen readers announce them dynamically. Link custom inputs and labels firmly using `id` and `htmlFor` to enhance click-to-focus capabilities for all users.
