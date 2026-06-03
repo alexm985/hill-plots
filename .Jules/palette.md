@@ -1,0 +1,3 @@
+## 2024-05-18 - Mirror Hover States for Keyboard Navigation
+**Learning:** When using `group-hover` for interactive elements like tooltips or button scaling, keyboard-only users miss these interactions unless the same states are mapped to `group-focus-visible`. Additionally, screen readers can read redundantly if a wrapper has an `aria-label` but nested visible text is also read; wrapping the text/icons in `aria-hidden="true"` fixes this.
+**Action:** Always mirror `group-hover` classes with `group-focus-visible` classes on nested elements, and add `aria-hidden="true"` to child elements that merely replicate the main wrapper`s `aria-label`.
