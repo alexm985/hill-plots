@@ -4,6 +4,7 @@ const AreaCalculator: React.FC = () => {
   const [length, setLength] = useState<string>('');
   const [width, setWidth] = useState<string>('');
   const [price, setPrice] = useState<string>('');
+  const [error, setError] = useState<string>('');
   const [results, setResults] = useState({
     totalCost: 0,
     sqYards: 0,
@@ -18,9 +19,10 @@ const AreaCalculator: React.FC = () => {
     const p = parseFloat(price) || 0;
 
     if (l <= 0 || w <= 0) {
-      alert("Please enter valid positive dimensions.");
+      setError("Please enter valid positive dimensions.");
       return;
     }
+    setError('');
 
     const sqFeet = l * w;
     const sqYards = sqFeet / 9;
@@ -77,6 +79,11 @@ const AreaCalculator: React.FC = () => {
                     placeholder="Enter rate"
                   />
                 </div>
+                {error && (
+                  <div role="alert" className="text-red-500 text-sm italic font-serif">
+                    {error}
+                  </div>
+                )}
                 <button 
                   onClick={calculate}
                   className="w-full bg-[#0097b2] hover:bg-transparent border border-[#0097b2] text-white hover:text-[#0097b2] py-4 font-bold uppercase tracking-widest transition-all mt-4 rounded-[10px]"
