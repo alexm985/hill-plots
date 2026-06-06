@@ -1,0 +1,3 @@
+## 2024-06-06 - Accessible Icon-Only Floating Buttons
+**Learning:** Floating action buttons with only icons (like the WhatsApp widget) are completely invisible to screen readers without an `aria-label`, and custom tooltips revealed on hover remain inaccessible to keyboard users unless explicitly mirrored with `group-focus-visible` classes.
+**Action:** Always add an `aria-label` to the parent interactive element of an icon-only button, add `aria-hidden="true"` to the icon itself to avoid redundant/confusing announcements, and systematically mirror Tailwind hover utilities (`group-hover:*`) with focus-visible equivalents (`group-focus-visible:*`) for tooltips.
