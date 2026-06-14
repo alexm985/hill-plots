@@ -1,0 +1,3 @@
+## 2026-06-14 - Accessible Form Validation in Area Calculator
+**Learning:** Native browser alerts for form validation disrupt the user experience and are not screen-reader friendly. Additionally, custom form components must have `id` and `htmlFor` attributes explicitly linked for proper accessibility and mobile click-to-focus behavior.
+**Action:** Replaced native `alert()` with a conditionally rendered inline error message utilizing `role="alert"`. Linked all form labels to their inputs using `id` and `htmlFor`. Always ensure forms use inline validation feedback with appropriate ARIA roles instead of disruptive native browser popups.
