@@ -1,0 +1,3 @@
+## 2024-03-24 - Improve Area Calculator form validation and accessibility
+**Learning:** Native `alert()` dialogues used for form validation interrupt user flow and provide a poor experience for screen reader users compared to inline contextual validation in the form elements. Additionally, adding `htmlFor` properties to link labels directly to inputs provides important accessibility mapping and a significantly better mobile touch experience, allowing clicks on the label to bring the input in focus.
+**Action:** When adding validation to forms or building form elements, always use inline validation elements with `role="alert"` instead of native dialogs. Always ensure every `<label>` has an `htmlFor` explicitly linked to its input's `id`.
