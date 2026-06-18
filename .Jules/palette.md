@@ -1,0 +1,3 @@
+## 2025-03-01 - Form Accessibility and UX Improvements
+**Learning:** Native `alert()` modals for validation break user flow, are inaccessible to screen readers in context, and feel unprofessional in modern React applications. Unlinked labels (`<label>` without `htmlFor`) prevent click-to-focus behavior, especially frustrating on mobile devices where tap targets are small.
+**Action:** Always replace native `alert()` validation with inline, conditionally rendered error messages using `role="alert"` for immediate screen reader notification. Always link `<label>` elements to their corresponding `<input>` using matching `htmlFor` and `id` attributes to maximize touch target area and ensure accessibility compliance.
