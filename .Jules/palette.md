@@ -1,0 +1,3 @@
+## 2024-06-21 - Accessible Tooltips with Tailwind CSS
+**Learning:** When using Tailwind's `group-hover` classes to show/hide tooltips on interactive elements (like floating action buttons), keyboard users completely miss out on this context if it isn't mirrored for focus states.
+**Action:** Always ensure that any custom CSS or Tailwind tooltip visibility toggles (e.g. `group-hover:opacity-100 group-hover:translate-x-0`) are mirrored with their corresponding focus-visible variants (e.g. `group-focus-visible:opacity-100 group-focus-visible:translate-x-0`) to ensure equitable experiences for screen reader and keyboard-only users.
