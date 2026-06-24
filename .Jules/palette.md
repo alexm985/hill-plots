@@ -1,0 +1,3 @@
+## 2023-10-27 - WhatsApp Button Keyboard Accessibility
+**Learning:** When using Tailwind CSS `group-hover` utilities to reveal elements like tooltips inside interactive parent elements (e.g., `<a>`), keyboard users are excluded unless `group-focus-visible` is also implemented on those tooltips and elements. Furthermore, custom-shaped buttons (like circles) require explicit `rounded-` utilities (e.g., `rounded-full`) in conjunction with `focus-visible:ring` to ensure the focus outline wraps the element correctly instead of defaulting to a rectangle.
+**Action:** Always pair `group-hover` with `group-focus-visible` for revealed content or scaling animations within links/buttons, and verify that the `focus-visible` outline shape matches the element's border radius.
