@@ -1,0 +1,3 @@
+## 2024-06-25 - Strict Line Limit Constraints and Lockfiles
+**Learning:** PRs in this project must strictly adhere to the < 50 lines of code change rule. Auto-generated package manager lockfiles (like `pnpm-lock.yaml`) generated during local environment setup count against this limit and will cause code reviews to fail if they are accidentally committed.
+**Action:** When making isolated micro-UX improvements in this repository, always ensure that `.lock` files (like `pnpm-lock.yaml`) are deliberately excluded from Git staging and commits. Run `git restore --staged pnpm-lock.yaml` if it gets added, and use explicit `git add` for modified files rather than `git commit -a`.
