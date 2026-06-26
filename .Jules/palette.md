@@ -1,0 +1,3 @@
+## 2025-06-26 - Avoid Native alert() for Form Validation
+**Learning:** Native `alert()` calls for form validation disrupt the user flow, block the main thread, and provide poor accessibility support. Furthermore, custom form components need explicitly linked `htmlFor` and `id` properties to ensure click-to-focus behavior and screen reader support.
+**Action:** Always replace native browser alerts with conditionally rendered inline error messages using `role="alert"`. Consistently verify that custom form elements actively link `label` and `input` elements using matching `htmlFor` and `id` properties.
