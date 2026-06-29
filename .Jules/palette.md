@@ -1,0 +1,3 @@
+## 2024-05-19 - Font Awesome Icon-Only Accessibility Pattern
+**Learning:** This app frequently uses Font Awesome `<i className="fab/fas ...">` inside interactive elements (`<a>` or `<button>`) without visible text (e.g., social links, mobile menu, WhatsApp float). Native focus and screen readers completely miss the purpose of these controls.
+**Action:** Always add `aria-label` to the parent interactive element (`<a>`/`<button>`), add `aria-hidden="true"` to the `<i>` tag, and ensure `focus-visible:ring-2 focus-visible:ring-[color] focus:outline-none rounded-[shape]` is applied to the parent to make them fully keyboard and screen-reader accessible.
