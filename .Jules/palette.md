@@ -1,0 +1,3 @@
+## 2024-03-05 - Custom Form Accessibility & Validation
+**Learning:** In custom React forms within this project, native browser `alert()` popups for validation disrupt the UX flow and are poorly accessible. Additionally, custom input/label pairings often lack native `<label htmlFor>` / `<input id>` linking, which breaks click-to-focus and screen-reader accessibility.
+**Action:** Always replace native `alert()` validation with conditionally rendered inline error components using `role="alert"`. Consistently verify that custom form elements actively link their `id` and `htmlFor` attributes for proper accessibility, and add `focus-visible:ring` to interactive form elements to support keyboard navigation.
