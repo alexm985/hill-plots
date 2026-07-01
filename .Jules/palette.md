@@ -1,0 +1,3 @@
+## 2024-05-24 - Avoid Native Alert for Form Validation
+ **Learning:** Native `alert()` calls for form validation are poorly received by users as they block the main thread and can disrupt the flow. They are also notoriously bad for accessibility because screen readers handle them inconsistently compared to proper DOM-based error roles.
+ **Action:** Always use conditionally rendered inline text with `role="alert"` for form validation feedback. Ensure the form fields have proper `id` and `htmlFor` attributes linked so users can click on labels to focus the input field, ensuring better accessibility.
