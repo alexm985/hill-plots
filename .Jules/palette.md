@@ -1,0 +1,3 @@
+## 2024-11-20 - Mirroring Hover Effects for Keyboard Accessibility
+**Learning:** When using `group-hover` for interactive tooltips and element scaling, keyboard users often miss out on the visual context if `group-focus-visible` is not explicitly paired. The visual tooltip content might exist in the DOM, but it won't render for someone tabbing through unless focus states mirror hover states.
+**Action:** Always pair `group-hover:opacity-100` and `group-hover:translate-x-0` with `group-focus-visible:opacity-100` and `group-focus-visible:translate-x-0` on tooltip elements. Ensure the parent interactive element has `focus:outline-none focus-visible:ring` to show clear intent.
