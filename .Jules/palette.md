@@ -1,0 +1,3 @@
+## 2025-03-08 - Accessible Icon-Only Floating Buttons
+**Learning:** In this project, floating action buttons (like the WhatsApp button) often use hover-based tooltips (`group-hover`) and rely purely on icons for visual affordance, rendering them inaccessible to screen readers and keyboard users who cannot trigger hover states.
+**Action:** Always pair `group-hover` tooltips on interactive elements with `group-focus-visible` classes. Additionally, ensure the parent anchor or button has an explicit `aria-label`, visible focus styles (`focus-visible:ring-2`), appropriate border-radius (`rounded-full`), and that purely decorative inner elements are explicitly hidden from screen readers using `aria-hidden="true"`.
