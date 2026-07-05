@@ -1,0 +1,3 @@
+## 2025-02-28 - Tooltip Keyboard Interaction Parity
+**Learning:** When using Tailwind `group-hover` for revealing custom CSS tooltips or animations (like the WhatsApp button popup), keyboard users navigating via Tab completely miss these interaction states.
+**Action:** Always mirror `group-hover` states with `group-focus-visible` (e.g., `group-hover:opacity-100 group-focus-visible:opacity-100`) on the child elements, and ensure the parent anchor/button has proper focus styling (`focus-visible:ring`) with appropriate border-radius (`rounded-full`) so the focus ring shapes correctly around the element.
