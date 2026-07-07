@@ -1,0 +1,3 @@
+## 2025-03-08 - Keyboard Accessibility for Floating Action Buttons
+**Learning:** Floating action buttons with absolute-positioned child tooltips (like the WhatsApp button) often rely heavily on `group-hover` for interactive reveals. This creates a gap for keyboard-only users who can tab to the button but never see the tooltip text or an appropriate focus state since the base anchor lacks native focus styling in Tailwind without explicit classes.
+**Action:** When adding hover-based interactions (`group-hover:opacity-100`) to complex icon buttons, consistently mirror them with `group-focus-visible` classes on the children and add `focus:outline-none focus-visible:ring-2` on the parent interactive element to ensure full keyboard discoverability.
