@@ -106,9 +106,9 @@ const ContactForm: React.FC = () => {
         
         <div className="mt-16 pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center space-x-10">
-                <a href="#" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-lg"><i className="fab fa-facebook-f"></i></a>
-                <a href="#" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-lg"><i className="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@hillplots" target="_blank" rel="noopener noreferrer" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-lg"><i className="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Visit our Facebook page" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-lg rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0097b2] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0E1A1A]"><i className="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Visit our Instagram page" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-lg rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0097b2] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0E1A1A]"><i className="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.youtube.com/@hillplots" target="_blank" rel="noopener noreferrer" aria-label="Visit our YouTube channel" className="text-[#A7B7B3] hover:text-[#0097b2] transition-colors text-lg rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0097b2] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0E1A1A]"><i className="fab fa-youtube" aria-hidden="true"></i></a>
             </div>
             <p className="text-[#A7B7B3]/50 text-[10px] uppercase tracking-[2px]">© 2026 Hill Plots Dehradun. Transparent Himalayan Real Estate.</p>
         </div>
