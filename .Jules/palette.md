@@ -1,0 +1,3 @@
+## 2024-07-10 - Replace disruptive alerts with accessible inline errors
+**Learning:** The `AreaCalculator` component was using native browser `alert()` dialogs for validation, which blocks the UI thread, causes jarring context shifts, and creates poor experiences for screen reader users. Additionally, form inputs lacked properly associated `<label>` elements via `htmlFor` and `id`, breaking accessibility and tap-to-focus on mobile.
+**Action:** When adding form validation, always use conditionally rendered inline error messages with `role="alert"` for seamless feedback and accessible screen reader announcements. Ensure every custom input has a strictly linked `<label>` with `htmlFor` matching the input's `id`.
