@@ -1,0 +1,3 @@
+## 2024-07-12 - Ensure tooltips and interactive floating icons support keyboard focus
+ **Learning:** Floating UI elements with visual hover states (tooltips) often lack equivalent keyboard navigation indicators. By extending Tailwind hover states (`group-hover:*`) to include focus-visible states (`group-focus-visible:*`) and applying proper focus outlines with `focus:outline-none focus-visible:ring`, accessibility for keyboard-only users is improved.
+ **Action:** Always pair `group-hover` utility classes with `group-focus-visible` to ensure interactive floating elements and tooltips display for both mouse and keyboard users. Add explicit `aria-label` to links containing only icons and `aria-hidden="true"` on non-semantic child elements.
