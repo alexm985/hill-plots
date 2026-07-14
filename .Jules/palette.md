@@ -1,0 +1,3 @@
+## 2024-05-18 - Hover Tooltips for Keyboard Navigation
+**Learning:** Decorative tooltips that rely solely on `group-hover` classes in Tailwind are completely inaccessible to keyboard-only users who navigate via Tab. This is a common pattern for floating action buttons.
+**Action:** When adding hover-based animations or tooltips (like `group-hover:opacity-100`), consistently mirror them with `group-focus-visible` (e.g., `group-focus-visible:opacity-100`) to ensure they become visible upon keyboard focus. Also ensure the parent interactive element has proper `aria-label` and focus ring styles (e.g., `focus:outline-none focus-visible:ring-2`).
