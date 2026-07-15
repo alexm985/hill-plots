@@ -1,0 +1,3 @@
+## 2025-02-27 - Keyboard-accessible tooltips and aria-labels on icon-only links
+ **Learning:** When adding hover-based animations or tooltips (using Tailwind `group-hover`), these are often inaccessible via keyboard navigation. Additionally, icon-only buttons lack screen-reader context.
+ **Action:** Always add `aria-label` to the parent interactive elements (like `<a>` or `<button>`), add `aria-hidden="true"` to visual-only elements (like icons and tooltips), and consistently mirror `group-hover` with `group-focus-visible`. Ensure parent interactive elements have appropriate border-radius classes (e.g., `rounded-full`) so `focus-visible:ring` shapes correctly around circular children.
