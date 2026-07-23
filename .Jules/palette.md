@@ -1,0 +1,3 @@
+## 2025-03-09 - Accessible Floating Social Buttons
+**Learning:** Floating action buttons (like WhatsApp widgets) heavily rely on icon-only designs and hover states (`group-hover`), which completely breaks accessibility for keyboard users and screen readers if not paired with ARIA roles and focus rings.
+**Action:** When adding hover-based tooltips or animations to icon buttons, consistently mirror them with `group-focus-visible`. Ensure parent interactive elements have appropriate border-radius classes (`rounded-full`) so `focus-visible:ring` shapes correctly around circular children, and hide redundant decorative elements with `aria-hidden="true"`.
