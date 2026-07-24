@@ -1,0 +1,3 @@
+## 2024-05-18 - Floating Action Button Tooltip Accessibility
+**Learning:** Adding visual tooltips to icon-only floating action buttons using `group-hover` often neglects keyboard users. If the parent `<a>` or `<button>` element does not mirror those states with `group-focus-visible` and lack `aria-label`, screen readers read out visually hidden text redundantly while keyboard users never see the tooltip text.
+**Action:** Always pair `group-hover` tooltip visibility classes with `group-focus-visible` on the tooltip itself, apply `aria-hidden="true"` to the visual tooltip text element, and apply a descriptive `aria-label` directly on the parent interactive container to ensure semantic clarity and correct visual feedback for all users.
