@@ -1,0 +1,3 @@
+## 2025-02-28 - Keyboard Focus Mirroring for Hover Effects
+**Learning:** When using Tailwind `group-hover` utilities to trigger tooltips or animations on interactive elements like icon buttons, keyboard users miss out on this context if it isn't mirrored with `group-focus-visible`. Additionally, without explicitly setting `rounded-*` utility classes on the parent interactive element (like an `<a>` wrapping a rounded div), the focus ring fallback will render as an ugly square around a circular component.
+**Action:** Always pair `group-hover` with `group-focus-visible` for tooltips and animations. Ensure parent focusable wrappers match the border-radius of their visual children so `focus-visible:ring` wraps nicely.
