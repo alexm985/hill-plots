@@ -1,0 +1,3 @@
+## 2026-07-27 - Focus Visible and ARIA Hidden for Icon-Only Buttons
+**Learning:** For icon-only anchor or button elements, adding `aria-label` to the interactive element improves accessibility. However, it's critical to add `aria-hidden="true"` to supplementary visual elements (such as tooltips containing the same text) to prevent screen readers from reading redundant information. Additionally, `group-hover` transitions on tooltips should be mirrored with `group-focus-visible` to ensure they are available via keyboard navigation.
+**Action:** When creating or updating icon-only buttons with visual tooltips, always add `aria-hidden="true"` to the tooltip and ensure hover state changes (e.g. `group-hover:opacity-100`) are mirrored using `group-focus-visible`.
