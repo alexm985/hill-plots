@@ -48,38 +48,41 @@ const AreaCalculator: React.FC = () => {
               
               <div className="space-y-6">
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Front Width (ft)</label>
+                  <label htmlFor="calc-length" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Front Width (ft)</label>
                   <input 
+                    id="calc-length"
                     type="number" 
                     value={length}
                     onChange={(e) => setLength(e.target.value)}
-                    className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
+                    className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] focus-visible:ring-2 focus-visible:ring-[#0097b2]/50 transition-all font-serif rounded-[10px]"
                     placeholder="Enter feet"
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Depth / Side (ft)</label>
+                  <label htmlFor="calc-width" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Depth / Side (ft)</label>
                   <input 
+                    id="calc-width"
                     type="number" 
                     value={width}
                     onChange={(e) => setWidth(e.target.value)}
-                    className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
+                    className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] focus-visible:ring-2 focus-visible:ring-[#0097b2]/50 transition-all font-serif rounded-[10px]"
                     placeholder="Enter feet"
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Rate per Sq. Yard (₹)</label>
+                  <label htmlFor="calc-price" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Rate per Sq. Yard (₹)</label>
                   <input 
+                    id="calc-price"
                     type="number" 
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
-                    className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
+                    className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] focus-visible:ring-2 focus-visible:ring-[#0097b2]/50 transition-all font-serif rounded-[10px]"
                     placeholder="Enter rate"
                   />
                 </div>
                 <button 
                   onClick={calculate}
-                  className="w-full bg-[#0097b2] hover:bg-transparent border border-[#0097b2] text-white hover:text-[#0097b2] py-4 font-bold uppercase tracking-widest transition-all mt-4 rounded-[10px]"
+                  className="w-full bg-[#0097b2] hover:bg-transparent border border-[#0097b2] text-white hover:text-[#0097b2] py-4 font-bold uppercase tracking-widest transition-all mt-4 rounded-[10px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0097b2]"
                 >
                   Show Results
                 </button>
