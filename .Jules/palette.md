@@ -1,0 +1,3 @@
+## 2025-02-27 - Font Awesome Icon-Only Link Keyboard Parity
+**Learning:** When using Font Awesome or icon-only elements inside interactive tags (like `<a>` or `<button>`) with decorative tooltips or animations triggered by `hover:`, keyboard users are often excluded from these visual cues because they only trigger on mouse hover.
+**Action:** Always wrap interactive icon-only elements in a `group` class and use `group-hover:` paired with `group-focus-visible:` on the tooltip/animated elements to ensure keyboard navigators receive the exact same visual feedback as mouse users. Apply `focus:outline-none focus-visible:ring` to the parent to provide a clear focus indicator without duplicate outlines.
