@@ -1,0 +1,3 @@
+## 2025-02-12 - Floating Action Button Keyboard Accessibility
+**Learning:** When using floating action buttons (FABs) with custom tooltip `div`s controlled by Tailwind `group-hover`, keyboard users miss out on the tooltip context when tabbing to the button if only `group-hover` is used. Furthermore, if the interactive element (`<a>` or `<button>`) wraps a circular visual element (`<div className="rounded-full">`), the default focus ring appears rectangular around the invisible container.
+**Action:** Always pair `group-hover` utility classes on tooltips with `group-focus-visible` classes to ensure parity for keyboard users. Additionally, explicitly add `rounded-full` to the parent interactive element so the `focus-visible:ring` conforms to the visual shape of the button.
