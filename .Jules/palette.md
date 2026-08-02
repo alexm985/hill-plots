@@ -1,0 +1,3 @@
+## 2025-03-02 - Floating Action Button Keyboard Accessibility
+**Learning:** Floating action buttons (like WhatsApp widgets) heavily rely on hover animations (`group-hover:scale-110`, tooltip reveals) for engagement, but keyboard users navigating via Tab often miss these crucial interaction cues and context if `group-focus-visible` isn't mirrored alongside hover states.
+**Action:** When adding hover-based tooltips or scale animations to floating UI elements using Tailwind, always parallel the `group-hover` utility classes with `group-focus-visible` variants to ensure equivalent discovery and feedback for keyboard navigation.
