@@ -1,0 +1,4 @@
+
+## 2024-05-18 - Replacing Native Alerts with Accessible Inline Errors in AreaCalculator
+**Learning:** The use of native browser `alert()` for form validation creates a jarring user experience and breaks accessibility context, especially for screen readers which might not announce it properly or allow easy return to the offending field. Forms also frequently miss explicit `htmlFor`-to-`id` linking between labels and inputs, hindering mobile usability (click-to-focus) and screen reader identification.
+**Action:** When validating simple form inputs, always replace native `alert()` calls with conditionally rendered inline error messages using `role="alert"`. Additionally, explicitly link all `<label>` elements to their corresponding `<input>` fields using `id` and `htmlFor` attributes to ensure full keyboard and touch accessibility.
