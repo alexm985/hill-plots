@@ -1,0 +1,3 @@
+## 2024-05-18 - Floating Action Button Tooltips & Focus Rings
+**Learning:** Tailwind's `group-hover` tooltips on floating action buttons (like WhatsApp widgets) remain invisible to keyboard users traversing the page. Additionally, adding focus rings (e.g., `focus-visible:ring`) to a circular element enclosed in a non-rounded anchor tag often results in a jagged, square focus ring which ruins the UI aesthetic and intent.
+**Action:** Always pair `group-hover:[state]` with `group-focus-visible:[state]` for tooltips to ensure keyboard users receive the same visual context. Ensure the parent interactive element (the `<a>` or `<button>`) receives an explicit shape class (like `rounded-full`) so the focus ring correctly wraps the inner circular elements.
