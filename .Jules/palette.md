@@ -1,0 +1,3 @@
+## 2024-03-20 - Floating Action Button Tooltips
+**Learning:** Floating action buttons with visually hidden tooltips that rely on `group-hover` for display are completely inaccessible to keyboard users and screen readers, leading to missed context or redundant announcements if inner elements lack proper ARIA attributes.
+**Action:** When adding or maintaining interactive FABs with tooltips, always add `aria-label` to the parent interactive element (e.g., `<a>` or `<button>`), `aria-hidden="true"` to supplementary visuals (icons, custom tooltips), and pair `group-focus-visible` with `group-hover` to trigger animations or tooltip displays on keyboard focus.
