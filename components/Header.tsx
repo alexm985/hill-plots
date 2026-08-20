@@ -114,11 +114,11 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, forceSolid
             
             <div className="lg:hidden flex items-center">
               <button 
-                className="text-white text-2xl focus:outline-none" 
+                className="text-white text-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0097b2] rounded"
                 aria-label="Toggle Menu"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+                <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'}`} aria-hidden="true"></i>
               </button>
             </div>
           </div>
@@ -169,9 +169,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, forceSolid
               Book Site Visit
             </a>
             <div className="flex justify-center space-x-8 mt-10">
-              <a href="#" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors"><i className="fab fa-instagram"></i></a>
-              <a href="#" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors"><i className="fab fa-facebook-f"></i></a>
-              <a href="https://www.youtube.com/@hillplots" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors"><i className="fab fa-youtube"></i></a>
+              <a href="#" aria-label="Instagram" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0097b2] rounded-full p-1"><i className="fab fa-instagram" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Facebook" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0097b2] rounded-full p-1"><i className="fab fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="https://www.youtube.com/@hillplots" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-white/40 hover:text-[#0097b2] text-xl transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0097b2] rounded-full p-1"><i className="fab fa-youtube" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
