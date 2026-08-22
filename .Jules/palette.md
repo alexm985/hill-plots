@@ -1,0 +1,3 @@
+## 2024-06-19 - Accessible Animations
+**Learning:** When using Tailwind `group-hover` for decorative micro-interactions (like tooltips or button scaling), screen reader users navigating via keyboard miss out on these visual context clues. Additionally, interactive parent elements (like `a` or `button`) wrapping complex circular children require appropriate border-radius utility classes (`rounded-full`) to ensure that `focus-visible:ring` conforms correctly to the visual shape.
+**Action:** Always mirror `group-hover:*` with `group-focus-visible:*` for custom UI interactions, and add layout utilities like `block rounded-full` to interactive parent wrappers to guarantee correctly styled keyboard focus rings.
