@@ -1,0 +1,3 @@
+## 2024-05-18 - Tooltip Accessibility with Focus-Visible
+ **Learning:** When creating visual tooltips triggered by `group-hover` on icon-only links, screen readers often read both the tooltip text (if unhidden) and the parent's `aria-label`, leading to redundancy. Additionally, keyboard users miss `group-hover` tooltips entirely unless `group-focus-visible` is explicitly applied.
+ **Action:** Always pair `group-hover` with `group-focus-visible` on tooltip components. Apply `aria-label` to the parent interactive element and strictly add `aria-hidden="true"` to both the icon and the visual tooltip to ensure a single, clear announcement for assistive technologies.
