@@ -1,0 +1,3 @@
+## 2023-10-27 - Keyboard Navigation for Hover Tooltips and Animations
+**Learning:** In Tailwind CSS, complex visual treatments attached to hover states (like the tooltip animation in the WhatsApp button using `group-hover:translate-x-0` and `group-hover:opacity-100`) often lack native keyboard analogues, meaning keyboard navigators miss out on helpful supplementary text.
+**Action:** When adding hover-based animations or tooltips (like 'group-hover'), consistently mirror them with 'group-focus-visible' (e.g., `group-focus-visible:translate-x-0`). Additionally, ensure parent interactive elements (like `<a>` or `<button>`) have appropriate border-radius classes (e.g., `rounded-full`) so `focus-visible:ring` shapes correctly around circular children.
