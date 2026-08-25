@@ -1,0 +1,3 @@
+## 2025-02-23 - Accessible Form Validation and Label Linking
+**Learning:** Using native `alert()` for form validation creates a jarring user experience and is inaccessible to screen readers. Furthermore, failing to explicitly link labels to inputs via `htmlFor` and `id` harms click-to-focus behavior, especially on mobile devices.
+**Action:** Replace native alerts with inline, conditionally rendered error messages using `role="alert"`. Always ensure custom form components have their `id` and `htmlFor` attributes actively linked for proper accessibility and mobile click-to-focus behavior.
