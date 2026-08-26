@@ -1,0 +1,3 @@
+## 2025-02-26 - Add ARIA Labels to Font Awesome Icon Links
+**Learning:** This app heavily relies on icon-only links using Font Awesome (e.g., social media icons and WhatsApp floaters). Without explicit labels, these critical call-to-actions are completely invisible to screen readers, and the lack of focus states makes them untraversable for keyboard users.
+**Action:** Always ensure that icon-only `<a>` or `<button>` tags include an `aria-label` attribute on the parent element, `aria-hidden="true"` on the child `<i>` or `<svg>` tag, and `focus-visible:ring-2 focus-visible:ring-[#0097b2] focus:outline-none rounded-sm` (or `rounded-full` where appropriate) styling to guarantee keyboard navigation accessibility.
