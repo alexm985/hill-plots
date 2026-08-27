@@ -1,0 +1,3 @@
+## 2024-08-27 - Accessible Interactive Floating Elements
+**Learning:** Floating action buttons (like the WhatsApp widget) with visual tooltips driven purely by `group-hover` create critical accessibility blockers for keyboard-only and screen-reader users. Without aria-labels on the parent and aria-hidden on internal decorative icons/animations, screen readers either misinterpret or fail to announce the button's action.
+**Action:** When implementing floating action buttons with icon children, always assign an explicit `aria-label` to the interactive parent (e.g., `<a aria-label="...">`), apply `aria-hidden="true"` to visual icons/animations, and pair `group-hover` tooltip display logic with `group-focus-visible` to ensure keyboard navigation feature parity.
