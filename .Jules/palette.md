@@ -1,0 +1,3 @@
+## 2026-09-05 - Inline Validation Errors over Native Alerts
+**Learning:** Using native browser `alert()` for form validation creates a poor UX, stops script execution, and presents accessibility issues as screen readers might not handle them gracefully.
+**Action:** Replace native `alert()` with conditionally rendered inline error messages using `role="alert"` for better user experience and screen-reader accessibility.

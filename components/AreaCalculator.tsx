@@ -4,6 +4,7 @@ const AreaCalculator: React.FC = () => {
   const [length, setLength] = useState<string>('');
   const [width, setWidth] = useState<string>('');
   const [price, setPrice] = useState<string>('');
+  const [error, setError] = useState<string>('');
   const [results, setResults] = useState({
     totalCost: 0,
     sqYards: 0,
@@ -13,12 +14,13 @@ const AreaCalculator: React.FC = () => {
   });
 
   const calculate = () => {
+    setError('');
     const l = parseFloat(length) || 0;
     const w = parseFloat(width) || 0;
     const p = parseFloat(price) || 0;
 
     if (l <= 0 || w <= 0) {
-      alert("Please enter valid positive dimensions.");
+      setError("Please enter valid positive dimensions.");
       return;
     }
 
@@ -52,7 +54,10 @@ const AreaCalculator: React.FC = () => {
                   <input 
                     type="number" 
                     value={length}
-                    onChange={(e) => setLength(e.target.value)}
+                    onChange={(e) => {
+                      setLength(e.target.value);
+                      setError('');
+                    }}
                     className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
                     placeholder="Enter feet"
                   />
@@ -62,7 +67,10 @@ const AreaCalculator: React.FC = () => {
                   <input 
                     type="number" 
                     value={width}
-                    onChange={(e) => setWidth(e.target.value)}
+                    onChange={(e) => {
+                      setWidth(e.target.value);
+                      setError('');
+                    }}
                     className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
                     placeholder="Enter feet"
                   />
@@ -72,11 +80,19 @@ const AreaCalculator: React.FC = () => {
                   <input 
                     type="number" 
                     value={price}
-                    onChange={(e) => setPrice(e.target.value)}
+                    onChange={(e) => {
+                      setPrice(e.target.value);
+                      setError('');
+                    }}
                     className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
                     placeholder="Enter rate"
                   />
                 </div>
+                {error && (
+                  <div role="alert" className="text-red-400 text-sm font-medium mt-2">
+                    {error}
+                  </div>
+                )}
                 <button 
                   onClick={calculate}
                   className="w-full bg-[#0097b2] hover:bg-transparent border border-[#0097b2] text-white hover:text-[#0097b2] py-4 font-bold uppercase tracking-widest transition-all mt-4 rounded-[10px]"
