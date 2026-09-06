@@ -1,0 +1,3 @@
+## 2024-03-24 - Interactive Element Scaling & Tooltip Accessibility
+**Learning:** In Tailwind, when a parent element uses `group` to trigger state changes (like `hover:scale-110` or displaying a tooltip on `group-hover`) on child elements, keyboard accessibility is often lost. Screen reader users might get context via `aria-label`, but sighted keyboard users miss visual cues.
+**Action:** Always mirror `group-hover` and `group-active` with `group-focus-visible` (e.g. `group-focus-visible:opacity-100`) to ensure tooltips and scale effects trigger on keyboard focus. Ensure the parent `<a>` or `<button>` has appropriate `focus-visible:ring` styling.
