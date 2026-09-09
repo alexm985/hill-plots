@@ -1,0 +1,3 @@
+## 2025-03-05 - Floating Action Button Tooltip Visibility
+**Learning:** In this project, opacity-hidden tooltips on floating action buttons (like WhatsApp) were only bound to `group-hover`, making them invisible to keyboard navigation.
+**Action:** When adding hover-based animations or tooltips using Tailwind (like `group-hover`), consistently mirror them with `group-focus-visible` (e.g., `group-focus-visible:opacity-100 group-focus-visible:translate-x-0`). Also ensure parent interactive elements (like `<a>` or `<button>`) have appropriate border-radius classes (e.g., `rounded-full`) so `focus-visible:ring` shapes correctly around circular children.
