@@ -4,6 +4,7 @@ const AreaCalculator: React.FC = () => {
   const [length, setLength] = useState<string>('');
   const [width, setWidth] = useState<string>('');
   const [price, setPrice] = useState<string>('');
+  const [error, setError] = useState<string>('');
   const [results, setResults] = useState({
     totalCost: 0,
     sqYards: 0,
@@ -18,10 +19,11 @@ const AreaCalculator: React.FC = () => {
     const p = parseFloat(price) || 0;
 
     if (l <= 0 || w <= 0) {
-      alert("Please enter valid positive dimensions.");
+      setError("Please enter valid positive dimensions for width and depth.");
       return;
     }
 
+    setError('');
     const sqFeet = l * w;
     const sqYards = sqFeet / 9;
     const biswa = sqYards / 45; 
@@ -46,30 +48,39 @@ const AreaCalculator: React.FC = () => {
             <div className="flex flex-col">
               <h3 className="text-2xl font-bold heading-serif mb-8 text-[#F5F7F6]">Area Calculator</h3>
               
+              {error && (
+                <div role="alert" className="text-red-400 text-sm mb-6 bg-red-400/10 p-3 rounded-[10px] border border-red-400/20">
+                  {error}
+                </div>
+              )}
+
               <div className="space-y-6">
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Front Width (ft)</label>
+                  <label htmlFor="calc-length" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Front Width (ft)</label>
                   <input 
+                    id="calc-length"
                     type="number" 
                     value={length}
-                    onChange={(e) => setLength(e.target.value)}
+                    onChange={(e) => { setLength(e.target.value); setError(''); }}
                     className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
                     placeholder="Enter feet"
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Depth / Side (ft)</label>
+                  <label htmlFor="calc-width" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Depth / Side (ft)</label>
                   <input 
+                    id="calc-width"
                     type="number" 
                     value={width}
-                    onChange={(e) => setWidth(e.target.value)}
+                    onChange={(e) => { setWidth(e.target.value); setError(''); }}
                     className="w-full bg-[#142626] border border-white/10 p-4 text-white outline-none focus:border-[#0097b2] transition-all font-serif rounded-[10px]"
                     placeholder="Enter feet"
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Rate per Sq. Yard (₹)</label>
+                  <label htmlFor="calc-price" className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Rate per Sq. Yard (₹)</label>
                   <input 
+                    id="calc-price"
                     type="number" 
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
