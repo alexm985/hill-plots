@@ -1,0 +1,3 @@
+## 2023-10-27 - Keyboard Focus for Complex Hover Animations
+**Learning:** When using intricate nested hover animations (like scaling and opacity fades on parent and child elements together), keyboard focus states are often entirely missed because developers only bind transitions to `group-hover`.
+**Action:** Always systematically mirror `group-hover` utility classes with `group-focus-visible` classes (e.g., adding `group-focus-visible:opacity-100` alongside `group-hover:opacity-100`) to ensure keyboard navigators experience the exact same interactive visual feedback (tooltips, scales) as mouse users. Also ensure the parent container properly receives standard `focus-visible:ring` outlines to anchor the interaction visually.
