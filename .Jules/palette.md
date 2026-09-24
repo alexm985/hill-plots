@@ -1,0 +1,3 @@
+## 2025-03-08 - Accessible Icon-Only Links in React/Tailwind
+**Learning:** Found a widespread pattern of relying on raw <i> tags with FontAwesome classes for social media and utility links without descriptive text for screen readers or visible focus states for keyboard users.
+**Action:** Always add `aria-label` to the parent `<a>` or `<button>`, `aria-hidden="true"` to decorative inner tags like `<i>`, and apply `focus-visible:ring-2 focus-visible:ring-[BRAND_COLOR]` to ensure the elements are fully accessible. For floating icons with tooltips, use `group-focus-visible` to match hover interactions.
