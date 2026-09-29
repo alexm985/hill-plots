@@ -1,0 +1,3 @@
+## 2025-02-28 - Replaced Native Alert with Inline Error in Area Calculator
+**Learning:** Native browser alerts for form validation break flow, are poor for screen readers, and feel out of place in modern UIs. Additionally, inputs lacking explicit id/htmlFor bindings break mobile click-to-focus and screen reader accessibility.
+**Action:** Replaced `alert()` with a conditionally rendered `<div role="alert">` to provide immediate, accessible inline feedback. Added `id` and `htmlFor` to all form inputs to ensure robust label associations and focus behavior.
