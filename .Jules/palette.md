@@ -1,0 +1,3 @@
+## 2024-03-24 - Synchronizing Internal Hover States with Parent Keyboard Focus
+**Learning:** When using Tailwind's `group` utility to trigger hover effects on inner elements (like tooltips or icon scaling), keyboard users miss these animations if only `group-hover:` is used. Standard native focus on the parent `<a>` or `<button>` does not automatically trigger nested hover effects.
+**Action:** Consistently pair `group-hover:opacity-100` (and similar utility states) with `group-focus-visible:opacity-100` on the inner elements. Ensure the parent element has the `group` class and a clear native `focus-visible:ring` so that keyboard navigation provides an equivalent rich experience to mouse hover.
