@@ -1,0 +1,3 @@
+## 2023-10-03 - WhatsApp Button Hover Animation for Keyboard Accessibility
+**Learning:** Adding complex hover animations (like absolute position tooltips displaying on group-hover) can exclude keyboard-only users who focus the element rather than hovering it.
+**Action:** When adding hover-based animations or tooltips using Tailwind (like 'group-hover'), consistently mirror them with 'group-focus-visible'. Also ensure parent interactive elements (like `<a>` or `<button>`) have appropriate border-radius classes (e.g., `rounded-full`) so `focus-visible:ring` shapes correctly around circular children.
