@@ -1,0 +1,3 @@
+## 2024-05-18 - Floating Action Button Tooltip Accessiblity
+**Learning:** For floating action buttons with hover-based tooltips, keyboard users miss contextual help. When applying Tailwind `focus-visible` to parent links, child tooltips must mirror `group-hover` with `group-focus-visible` to ensure keyboard accessibility. Additionally, adding `rounded-full` to the parent `<a>` ensures the focus ring neatly outlines circular child elements.
+**Action:** Always mirror `group-hover` visibility states with `group-focus-visible` for tooltips on interactive elements. Explicitly hide visual tooltip text and icons from screen readers using `aria-hidden="true"` when the parent already has an `aria-label`.
