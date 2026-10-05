@@ -1,0 +1,3 @@
+## 2026-10-05 - Inline Form Validation & Label Accessibility
+**Learning:** Replacing native browser `alert()` calls with conditionally rendered inline messages using `role="alert"` significantly improves accessibility for screen reader users and provides a better, non-blocking user experience. Actively linking form labels with their corresponding inputs using `htmlFor` and `id` attributes enhances click-to-focus behavior, which is especially useful on mobile devices.
+**Action:** Always prefer inline error messaging over native alerts for form validation. Ensure all custom form elements have properly linked `id` and `htmlFor` attributes.
