@@ -1,0 +1,3 @@
+## 2025-03-08 - Keyboard Focus Mirroring for Hover Effects
+**Learning:** When using Tailwind utility classes for hover-based animations or visibility (like tooltips appearing on `group-hover` or buttons scaling on `hover`), keyboard users miss these interactions. Adding `focus-visible` states is not just about the focus ring; it's also about triggering these same states (`group-focus-visible`). Additionally, parent elements like `<a>` need `rounded-full` if they encapsulate circular interactive children so the `focus-visible:ring` conforms properly to the circular shape.
+**Action:** Always mirror interactive `group-hover` effects with `group-focus-visible`, and apply appropriate border-radius shapes (e.g., `rounded-full`) to parent anchor tags containing rounded icons.
