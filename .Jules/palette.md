@@ -1,0 +1,3 @@
+## 2024-05-18 - Ensure Keyboard Reachability for Animated/Tooltip Elements
+ **Learning:** When adding hover-based animations (like scaling up) or tooltips using Tailwind (like `group-hover`), keyboard navigators miss out on these visual cues if they are not mirrored. Furthermore, without `focus-visible` styling, it can be impossible to tell when an interactive element like a floating WhatsApp button has focus.
+ **Action:** Consistently mirror `group-hover:` utility classes with `group-focus-visible:` classes. Additionally, ensure parent interactive elements (like `<a>` or `<button>`) have appropriate border-radius classes (e.g., `rounded-full`) so `focus-visible:ring` shapes correctly around circular children.
