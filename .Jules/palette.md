@@ -1,0 +1,3 @@
+## 2025-03-01 - Hover-based Tooltips and Animations
+**Learning:** In React/Tailwind applications, hover-based UX enhancements (like tooltips or scaling buttons via `group-hover`) are invisible to keyboard users and often missed if interactive elements lack proper focus management and mirroring.
+**Action:** When implementing `group-hover` utilities for dynamic interaction or tooltips on focusable elements (like `<a>` or `<button>`), always append corresponding `group-focus-visible` utilities to ensure consistent visibility and animation states during keyboard navigation.
