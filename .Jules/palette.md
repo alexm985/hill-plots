@@ -1,0 +1,3 @@
+## 2025-02-28 - Replace Native Alerts with Inline Error Messages
+**Learning:** Native browser alerts (`alert()`) for form validation create a jarring user experience, break focus management, and provide poor accessibility support for screen readers. Using conditionally rendered inline error messages with `role="alert"` ensures screen readers announce errors immediately, keeping users within the application context.
+**Action:** Always avoid `alert()` for validation. Implement standard inline messaging with `role="alert"` (or `aria-live="assertive"`) linked conditionally to local or global state to handle validation feedback seamlessly and accessibly.
