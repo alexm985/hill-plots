@@ -4,6 +4,7 @@ const AreaCalculator: React.FC = () => {
   const [length, setLength] = useState<string>('');
   const [width, setWidth] = useState<string>('');
   const [price, setPrice] = useState<string>('');
+  const [error, setError] = useState<string>('');
   const [results, setResults] = useState({
     totalCost: 0,
     sqYards: 0,
@@ -18,9 +19,11 @@ const AreaCalculator: React.FC = () => {
     const p = parseFloat(price) || 0;
 
     if (l <= 0 || w <= 0) {
-      alert("Please enter valid positive dimensions.");
+      setError("Please enter valid positive dimensions.");
       return;
     }
+
+    setError('');
 
     const sqFeet = l * w;
     const sqYards = sqFeet / 9;
@@ -46,6 +49,12 @@ const AreaCalculator: React.FC = () => {
             <div className="flex flex-col">
               <h3 className="text-2xl font-bold heading-serif mb-8 text-[#F5F7F6]">Area Calculator</h3>
               
+              {error && (
+                <div role="alert" className="mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-400 rounded-[10px] text-sm font-serif">
+                  {error}
+                </div>
+              )}
+
               <div className="space-y-6">
                 <div>
                   <label className="block mb-2 text-[#A7B7B3] text-sm font-bold uppercase tracking-widest">Front Width (ft)</label>
