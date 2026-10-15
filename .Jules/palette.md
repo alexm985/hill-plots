@@ -1,0 +1,3 @@
+## 2024-05-18 - Floating Action Button Tooltips
+**Learning:** Tooltips on floating action buttons triggered via Tailwind `group-hover` are completely inaccessible to keyboard users unless explicitly mirrored with `group-focus-visible`. Furthermore, parent interactive elements (like `<a>`) require appropriate border-radius classes (e.g., `rounded-full`) so `focus-visible:ring` shapes correctly around circular children.
+**Action:** When adding hover-based animations or tooltips (like 'group-hover'), consistently mirror them with 'group-focus-visible' and ensure parent interactive elements have appropriate border-radius classes.
