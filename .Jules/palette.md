@@ -1,0 +1,3 @@
+## 2023-10-18 - Accessible Icon Buttons and Keyboard-Friendly Tooltips
+**Learning:** Font Awesome icon-only anchors (like the WhatsApp button and footer social links) lack screen reader descriptions. Hover-based tooltips on these elements remain hidden from keyboard users without explicit focus-visible classes.
+**Action:** Always add `aria-label` to parent interactive elements, `aria-hidden="true"` to `<i>` and tooltip tags, and pair `group-hover` with `group-focus-visible` for tooltips. Apply `focus-visible:ring-2` with appropriate border-radius (e.g., `rounded-full`) for visual focus indicators.
