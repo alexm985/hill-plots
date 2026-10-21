@@ -1,0 +1,3 @@
+## 2025-02-27 - Accessible Inline Validation and Linked Form Labels
+**Learning:** Using native browser `alert()` for form validation creates a jarring user experience and presents accessibility barriers. Additionally, unlinked form labels (`<label>` without `htmlFor` matching the input's `id`) prevent click-to-focus behavior and reduce screen reader context.
+**Action:** Always replace native `alert()` calls with conditionally rendered, accessible inline error messages using `role="alert"`. Ensure all `<label>` elements are actively linked to their corresponding `<input>` elements via `htmlFor` and `id` attributes.
