@@ -1,0 +1,3 @@
+## 2024-10-24 - Interactive Floating Elements Accessibility
+**Learning:** Floating interactive elements (like WhatsApp buttons) with visual-only tooltips (e.g., `group-hover:opacity-100`) and icon-only content are inaccessible to keyboard users and screen readers if they lack `aria-label` and `focus-visible` styling.
+**Action:** Always add explicit `aria-label` to the parent anchor/button, use `focus-visible:outline-none focus-visible:ring-X` for keyboard focus, apply `aria-hidden="true"` to decorative icons/tooltips, and mirror hover utility classes with `group-focus-visible` to ensure visual feedback parity for keyboard users.
