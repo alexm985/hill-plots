@@ -1,0 +1,3 @@
+## 2024-05-19 - Floating Action Button Keyboard Accessibility
+**Learning:** When adding visual effects (like tooltips or scaling) on hover for floating action buttons, keyboard users miss these cues if `focus-visible` isn't styled similarly. Screen readers also encounter redundant announcements if tooltips aren't hidden when the parent already has an `aria-label`.
+**Action:** Always apply `aria-label` to icon-only links/buttons, use `group-focus-visible` alongside `group-hover` for internal element scaling and tooltip visibility, add `aria-hidden="true"` to supplementary visual elements, and use `inline-block rounded-full focus:outline-none focus-visible:ring-4` on the parent container.
