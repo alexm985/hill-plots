@@ -1,0 +1,3 @@
+## 2024-05-18 - Mirroring Group Hover Tooltips with Focus Visible
+**Learning:** In this project, Font Awesome icons are frequently used within interactive elements where hover animations and tooltips are implemented via Tailwind's `group-hover` on child elements. Keyboard users completely miss out on this visual feedback because the focus state is not mirrored to these elements.
+**Action:** When adding hover-based tooltips or animations using Tailwind, consistently mirror `group-hover` classes with `group-focus-visible`. Additionally, ensure parent interactive elements have appropriate border-radius classes (like `rounded-full`) and `inline-block` so `focus-visible:ring` wraps them correctly.
