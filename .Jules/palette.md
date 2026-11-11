@@ -1,0 +1,3 @@
+## 2024-11-11 - Accessible Tooltips on Icon Buttons
+**Learning:** When using icon-only interactive elements with visual tooltips triggered by `group-hover`, keyboard users miss out on the tooltip context if `group-focus-visible` is not explicitly mirrored. Adding `focus-visible:ring` to parent elements without specific border-radius classes can result in awkwardly shaped focus indicators.
+**Action:** Always pair `group-hover` with `group-focus-visible` on tooltip elements. Ensure parent anchors/buttons have `rounded-full` or appropriate radius classes so `focus-visible:ring` conforms to the visual shape of the child elements.
